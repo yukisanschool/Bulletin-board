@@ -21,3 +21,13 @@ CREATE TABLE board_res(
     ,res_date   date            DEFAULT sysdate
     ,res_good   number(4)       DEFAULT 0
 );
+
+
+/*順序test用*/
+CREATE SEQUENCE test1
+  START WITH 1
+  INCREMENT BY 1
+  MAXVALUE 1000
+  MINVALUE 1
+  NOCYCLE
+;
