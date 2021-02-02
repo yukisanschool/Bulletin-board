@@ -15,7 +15,7 @@ board_res
     th_id		number			6		○				board_thread(th_id)	スレッドID(外部から参照)
     res_name		varchar2		20		○							返信者名
     res_icon		number			2		○							アイコン
-    res_text		varchar2		500									レスの本文
+    res_text		varchar2		500		○							レスの本文
     res_date		date					○							返信日付
     res_good		number			4		○							いいね数
 							
