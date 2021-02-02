@@ -1,0 +1,11 @@
+/*スレッド*/
+CREATE TABLE board_thread(
+	th_id 		NUMBER(6) 		NOT NULL CONSTRAINT PK_Thread_id PRIMARY KEY
+   ,th_title 	VARCHAR2(100) 	NOT NULL
+   ,th_name 	VARCHAR2(20) 	NOT NULL
+   ,th_icon 	NUMBER(2) 		NOT NULL
+   ,th_date 	DATE 			DEFAULT sysdate
+   ,th_description VARCHAR2(200)
+   ,th_view 	NUMBER(4) 		DEFAULT 0
+   ,th_good 	NUMBER(4) 		DEFAULT 0
+);
