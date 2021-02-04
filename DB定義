@@ -16,6 +16,6 @@ board_res
     res_name		varchar2		20		○									返信者名
     res_icon		number			2		○									アイコン
     res_text		varchar2		500		○									レスの本文
-    res_date		date					○							sysdate		返信日付
-    res_good		number			4		○							0		いいね数
+    res_date		date												sysdate		返信日付
+    res_good		number			4									0		いいね数
 							
