@@ -1,21 +1,21 @@
 board_thread
-    列名			型		サイズ		NN	PK	CK		FK			説明・備考
-    th_id		number			6		○	○						スレッドID(主キー)
-    th_title		varchar2		100		○							スレッドタイトル
-    th_name		varchar2		20		○							スレッド作成者名
-    th_icon		number			2		○							アイコン
-    th_date		date					○							スレッド作成日
-    th_description	varchar2		200									スレッド説明
-    th_view		number			4		○							閲覧数
-    th_good		number			4		○							いいね数
+    列名			型		サイズ		NN	PK	CK		FK			DF		説明・備考
+    th_id		number			6		○	○								スレッドID(主キー)
+    th_title		varchar2		100		○									スレッドタイトル
+    th_name		varchar2		20		○									スレッド作成者名
+    th_icon		number			2		○									アイコン
+    th_date		date					○							sysdate		スレッド作成日
+    th_description	varchar2		200											スレッド説明
+    th_view		number			4									0		閲覧数
+    th_good		number			4									0		いいね数
 							
 board_res	
-    列名			型	        サイズ		NN	PK	CK		FK			説明・備考							
-    res_id		number			6		○	○						レスID(主キー)
-    th_id		number			6		○				board_thread(th_id)	スレッドID(外部から参照)
-    res_name		varchar2		20		○							返信者名
-    res_icon		number			2		○							アイコン
-    res_text		varchar2		500		○							レスの本文
-    res_date		date					○							返信日付
-    res_good		number			4		○							いいね数
+    列名			型	        サイズ		NN	PK	CK		FK			DF		説明・備考							
+    res_id		number			6		○	○								レスID(主キー)
+    th_id		number			6		○				board_thread(th_id)			スレッドID(外部から参照)
+    res_name		varchar2		20		○									返信者名
+    res_icon		number			2		○									アイコン
+    res_text		varchar2		500		○									レスの本文
+    res_date		date					○							sysdate		返信日付
+    res_good		number			4		○							0		いいね数
 							
