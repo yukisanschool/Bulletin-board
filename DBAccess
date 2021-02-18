@@ -1,0 +1,196 @@
+//javac -cp C:\tomcat8.5\webapps\myapps\WEB-INF\classes DBAccess.java
+package tera;
+
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.math.BigDecimal;
+import java.sql.Date;
+import java.util.ArrayList;
+
+public class DBAccess{
+	public void insertTh(int icon, String name, String title, String description){
+		try{
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+
+			//Oracleに接続する
+			Connection cn=
+				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl",
+				"info","pro");
+			System.out.println("接続完了");
+			
+			//insert文
+			String sql="INSERT INTO board_thread VALUES(test1.NEXTVAL, '"+title+"',' "+name+"', "+icon+", DEFAULT, '"+description+"', DEFAULT, DEFAULT)";
+			System.out.println("あ");
+			//Statementインターフェイスを実装するクラスをインスタンス化する
+			Statement st=cn.createStatement();
+			System.out.println("い");
+			//select文を実行し
+			//ResultSetインターフェイスを実装したクラスの
+			//インスタンスが返る
+			//ResultSet rs=st.executeQuery(sql);
+			System.out.println("う");
+			//insert文を実行し
+			//ResultSetインターフェイスを実装したクラスの
+			//インスタンスが返る
+			int in=st.executeUpdate(sql);
+			System.out.println("え");
+			//Oracleから切断する
+			cn.close();
+
+			System.out.println("切断完了");
+		}catch(ClassNotFoundException e){
+			e.printStackTrace();
+			System.out.println("クラスがないみたい。");
+		}catch(SQLException e){
+			e.printStackTrace();
+			System.out.println("SQL関連の例外みたい。");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	public void insertRes(int th_id,String res_name,int res_icon,String res_text){
+        try{
+        	Class.forName("oracle.jdbc.driver.OracleDriver");
+			System.out.println("1");
+            //Oracleに接続する
+			Connection cn=
+				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
+            
+            String sql="INSERT INTO board_res VALUES(test1.NEXTVAL,"+th_id+",'"+res_name+"',"+res_icon+",'"+res_text+"',DEFAULT,DEFAULT)";
+            //Statementインターフェイスを実装するクラスをインスタンス化する
+			Statement st=cn.createStatement();
+			System.out.println("2");
+
+            //insert文を実行し
+			//ResultSetインターフェイスを実装したクラスの
+			//インスタンスが返る
+			int in=st.executeUpdate(sql);
+			System.out.println("3");
+
+            //Oracleから切断する
+            cn.close();
+        }
+    	catch(ClassNotFoundException e){
+			e.printStackTrace();
+			System.out.println("クラスがないみたい。");
+		}
+    	catch(SQLException e){
+			e.printStackTrace();
+			System.out.println("SQL関連の例外みたい。");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+    }
+	public ArrayList<ThreadData> selectTh(ArrayList<ThreadData> list){
+	try{
+        	Class.forName("oracle.jdbc.driver.OracleDriver");
+        	
+            //Oracleに接続する
+			Connection cn=
+				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
+		
+			String sql=" SELECT th_id, th_icon, th_name, th_title, th_description, th_date, th_good, th_view FROM board_thread";
+
+			//Statementインターフェイスを実装するクラスをインスタンス化する
+			Statement st=cn.createStatement();
+
+			//select文を実行し
+			//ResultSetインターフェイスを実装したクラスの
+			//インスタンスが返る
+			ResultSet rs=st.executeQuery(sql);
+			list.clear();
+			while (rs.next()) {
+				ThreadData td = new ThreadData();
+				//データを取得する
+				BigDecimal _id =rs.getBigDecimal(1);
+				int id=_id.intValue();
+				td.setTh_id(id);
+				BigDecimal _icon =rs.getBigDecimal(2);
+				int icon=_icon.intValue();
+				td.setTh_icon(icon);
+				td.setTh_name(rs.getString(3));
+				td.setTh_title(rs.getString(4));
+				td.setTh_description(rs.getString(5));
+				td.setTh_date(rs.getDate(6));
+				BigDecimal _good =rs.getBigDecimal(7);
+				int good=_good.intValue();
+				td.setTh_good(good);
+				BigDecimal _view =rs.getBigDecimal(8);
+				int view=_view.intValue();
+				td.setTh_view(view);
+				list.add(td);
+			}
+			
+            
+            //Oracleから切断する
+            cn.close();
+        }catch(ClassNotFoundException e){
+			e.printStackTrace();
+			System.out.println("クラスがないみたい。");
+		}catch(SQLException e){
+			e.printStackTrace();
+			System.out.println("SQL関連の例外みたい。");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return list;
+    }
+
+    public ArrayList<ResponceData> selectRes(int th_id,ArrayList<ResponceData> list){
+        try{
+        	Class.forName("oracle.jdbc.driver.OracleDriver");
+        	
+            //Oracleに接続する
+			Connection cn=
+				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
+			
+			String sql=" SELECT res_id, res_name, res_icon, res_text, res_good, res_date FROM board_res WHERE th_id="+th_id;
+
+			//Statementインターフェイスを実装するクラスをインスタンス化する
+			Statement st=cn.createStatement();
+
+			//select文を実行し
+			//ResultSetインターフェイスを実装したクラスの
+			//インスタンスが返る
+			ResultSet rs=st.executeQuery(sql);
+			list.clear();
+			while (rs.next()) {
+				ResponceData r = new ResponceData();
+				//データを取得する
+				BigDecimal _id =rs.getBigDecimal(1);
+				int id=_id.intValue();
+				r.setRes_id(id);
+				r.setRes_name(rs.getString(2));
+				BigDecimal _icon =rs.getBigDecimal(3);
+				int icon=_icon.intValue();
+				r.setRes_icon(icon);
+				r.setRes_text(rs.getString(4));
+				BigDecimal _good =rs.getBigDecimal(5);
+				int good=_good.intValue();
+				r.setRes_good(good);
+				r.setRes_date(rs.getDate(6));
+				list.add(r);
+			}
+			
+            
+            //Oracleから切断する
+            cn.close();
+        }catch(ClassNotFoundException e){
+			e.printStackTrace();
+			System.out.println("クラスがないみたい。");
+		}catch(SQLException e){
+			e.printStackTrace();
+			System.out.println("SQL関連の例外みたい。");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return list;
+    }
+}
+
