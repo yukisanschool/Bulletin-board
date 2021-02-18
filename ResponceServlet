@@ -1,0 +1,90 @@
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
+
+import tera.ResponceData;
+import tera.DBAccess;
+
+public class ResponceServlet extends HttpServlet {
+	private ArrayList<ResponceData> list = new ArrayList<ResponceData>();
+	
+	protected void doPost(HttpServletRequest req, HttpServletResponse res)
+	throws ServletException, IOException {
+		
+		doGet(req,res);
+		
+		//POST要求によって送信された文字列をクライアントで
+		//エンコードしたときの文字コードを指定する
+		//これを指定しないと文字化けする可能性がある
+		req.setCharacterEncoding("Windows-31J");
+		
+		String _id=req.getParameter("id");
+		Integer id=Integer.parseInt(_id);
+
+		String ic=req.getParameter("icon");
+		String un=req.getParameter("user_name");
+		String co=req.getParameter("contents");
+		
+		Integer i=Integer.parseInt(ic);
+		
+		ResponceData resdata=new ResponceData();
+		resdata.setRes_icon(i);
+		resdata.setRes_name(un);
+		resdata.setRes_text(co);
+		
+		DBAccess da=new DBAccess();
+		da.insertRes(id,resdata.getRes_name(),resdata.getRes_icon(),resdata.getRes_text());
+		
+		doGet(req,res);
+		/*
+		list.add(resdata);
+		
+		//HttpServletRequestの実装クラスのインスタンスに
+		//usersという名前でデータを登録する
+		req.setAttribute("list",list);
+		
+		//RequestDispatcherインターフェイスを実装するクラスの
+		//インスタンスを取得する
+		//引数は転送先のURL
+		RequestDispatcher dispatcher=
+			req.getRequestDispatcher("resList");
+		
+		//転送先に要求を転送する
+		dispatcher.forward(req,res);
+		*/
+
+	}
+	protected void doGet(HttpServletRequest req, HttpServletResponse res)
+	throws ServletException, IOException {
+		res.setContentType("text/html; charset=Windows-31J");
+		
+		PrintWriter out = res.getWriter();
+
+		DBAccess da=new DBAccess();
+
+		String _id=req.getParameter("id");
+		Integer id=Integer.parseInt(_id);
+		
+		list=da.selectRes(id,list);
+
+		//HttpServletRequestの実装クラスのインスタンスに
+		//usersという名前でデータを登録する
+		req.setAttribute("list",list);
+		
+		//RequestDispatcherインターフェイスを実装するクラスの
+		//インスタンスを取得する
+		//引数は転送先のURL
+		RequestDispatcher dispatcher=
+			req.getRequestDispatcher("resList");
+		
+		//転送先に要求を転送する
+		dispatcher.forward(req,res);
+		
+	}
+}
