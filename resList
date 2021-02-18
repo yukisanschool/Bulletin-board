@@ -1,0 +1,45 @@
+<%@ page pageEncoding="Windows-31J"
+	contentType="text/html;charset=Windows-31J" %>
+
+<%--JSTL 1.1.2 core タグライブラリ--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<html>
+    <head><title>掲示板サイト</title></head>
+    <body>
+    <p>掲示板</p>
+    	
+
+    
+	<form method="POST" action="ResponceServlet">
+	    <table border="1">
+		<tr><th>日付</th><th>アイコン</th><th>名前</th><th>内容</th></tr>
+		<c:forEach var="_list" items="${list}">
+		    <tr><td>${_list.res_date}</td><td>${_list.res_icon}</td><td>${_list.res_name}</td><td>${_list.res_text}</td></tr>
+		</c:forEach>
+	</table>
+    
+    <div>アイコンを選んでください</div>
+        <ul>
+            <li><input type="radio"  value="1" name="icon">1</label></li>
+            <li><input type="radio"  value="2" name="icon">2</label></li>
+            <li><input type="radio"  value="3" name="icon">3</label></li>
+            <li><input type="radio"  value="4" name="icon">4</label></li>
+            <li><input type="radio"  value="5" name="icon">5</label></li>
+        </ul>
+        <p>作成者</p>
+            <input type="text" name="user_name"><br><br>
+        <p>内容</p>
+            <textarea name="contents" rows="8" cols="40"></textarea><br><br>
+        <input type="submit" name="btn1" value="投稿する"><br></br>
+        <input type="search" name="search1" value="検索">
+
+        <a href="http://localhost:8080/myapps/threadservlet">スレッド一覧に戻る</a>
+        
+        
+    </form>
+        
+	
+
+    </body>
+    </html>
