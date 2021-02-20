@@ -1,5 +1,5 @@
 /*スレッド*/
-CREATE TABLE board_thread(
+CREATE TABLE 10_board_thread(
 	th_id 		NUMBER(6) 		NOT NULL CONSTRAINT PK_Thread_id PRIMARY KEY
    ,th_title 	VARCHAR2(100) 	NOT NULL
    ,th_name 	VARCHAR2(20) 	NOT NULL
@@ -12,7 +12,7 @@ CREATE TABLE board_thread(
 
 
 /*レス*/
-CREATE TABLE board_res(
+CREATE TABLE 10_board_res(
     res_id      number(6)       NOT NULL CONSTRAINT PK_board_res_Rid PRIMARY KEY
     ,th_id      number(6)       NOT NULL CONSTRAINT FK_board_res_Tid REFERENCES board_thread(th_id)
     ,res_name   varchar2(20)    NOT NULL
@@ -23,8 +23,8 @@ CREATE TABLE board_res(
 );
 
 
-/*順序test用*/
-CREATE SEQUENCE test1
+/*順序レス用*/
+CREATE SEQUENCE 10_test1
   START WITH 1
   INCREMENT BY 1
   MAXVALUE 1000
