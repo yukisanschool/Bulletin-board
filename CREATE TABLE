@@ -22,6 +22,14 @@ CREATE TABLE 10_board_res(
     ,res_good   number(4)       DEFAULT 0
 );
 
+/*順序スレッド用*/
+CREATE SEQUENCE 10_test0
+  START WITH 1
+  INCREMENT BY 1
+  MAXVALUE 1000
+  MINVALUE 1
+  NOCYCLE
+;
 
 /*順序レス用*/
 CREATE SEQUENCE 10_test1
