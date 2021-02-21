@@ -14,7 +14,7 @@ CREATE TABLE 10_board_thread(
 /*レス*/
 CREATE TABLE 10_board_res(
     res_id      number(6)       NOT NULL CONSTRAINT PK_board_res_Rid PRIMARY KEY
-    ,th_id      number(6)       NOT NULL CONSTRAINT FK_board_res_Tid REFERENCES board_thread(th_id)
+    ,th_id      number(6)       NOT NULL CONSTRAINT FK_board_res_Tid REFERENCES 10_board_thread(th_id)
     ,res_name   varchar2(20)    NOT NULL
     ,res_icon   number(2)       NOT NULL
     ,res_text   varchar2(500)   NOT NULL
