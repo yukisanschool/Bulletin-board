@@ -22,28 +22,22 @@ public class DBAccess{
 			Connection cn=
 				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl",
 				"info","pro");
-			System.out.println("接続完了");
 			
 			//insert文
 			String sql="INSERT INTO board_thread VALUES(test1.NEXTVAL, '"+title+"',' "+name+"', "+icon+", DEFAULT, '"+description+"', DEFAULT, DEFAULT)";
-			System.out.println("あ");
 			//Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
-			System.out.println("い");
 			//select文を実行し
 			//ResultSetインターフェイスを実装したクラスの
 			//インスタンスが返る
 			//ResultSet rs=st.executeQuery(sql);
-			System.out.println("う");
 			//insert文を実行し
 			//ResultSetインターフェイスを実装したクラスの
 			//インスタンスが返る
 			int in=st.executeUpdate(sql);
-			System.out.println("え");
 			//Oracleから切断する
 			cn.close();
 
-			System.out.println("切断完了");
 		}catch(ClassNotFoundException e){
 			e.printStackTrace();
 			System.out.println("クラスがないみたい。");
@@ -54,24 +48,23 @@ public class DBAccess{
 			e.printStackTrace();
 		}
 	}
-	public void insertRes(int th_id,String res_name,int res_icon,String res_text){
+	public void insertRes(String tid,String res_name,int res_icon,String res_text){
         try{
         	Class.forName("oracle.jdbc.driver.OracleDriver");
-			System.out.println("1");
             //Oracleに接続する
 			Connection cn=
 				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
             
+			int th_id=Integer.parseInt(tid);
+
             String sql="INSERT INTO board_res VALUES(test1.NEXTVAL,"+th_id+",'"+res_name+"',"+res_icon+",'"+res_text+"',DEFAULT,DEFAULT)";
             //Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
-			System.out.println("2");
 
             //insert文を実行し
 			//ResultSetインターフェイスを実装したクラスの
 			//インスタンスが返る
 			int in=st.executeUpdate(sql);
-			System.out.println("3");
 
             //Oracleから切断する
             cn.close();
@@ -142,15 +135,19 @@ public class DBAccess{
 		return list;
     }
 
-    public ArrayList<ResponceData> selectRes(int th_id,ArrayList<ResponceData> list){
+    public ArrayList<ResponceData> selectRes(String tid,ArrayList<ResponceData> list){
         try{
         	Class.forName("oracle.jdbc.driver.OracleDriver");
+
         	
             //Oracleに接続する
 			Connection cn=
 				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
 			
+			int th_id=Integer.parseInt(tid);
+			
 			String sql=" SELECT res_id, res_name, res_icon, res_text, res_good, res_date FROM board_res WHERE th_id="+th_id;
+
 
 			//Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
@@ -177,7 +174,6 @@ public class DBAccess{
 				r.setRes_date(rs.getDate(6));
 				list.add(r);
 			}
-			
             
             //Oracleから切断する
             cn.close();
@@ -193,4 +189,5 @@ public class DBAccess{
 		return list;
     }
 }
+
 
