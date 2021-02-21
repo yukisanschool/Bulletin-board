@@ -1,0 +1,101 @@
+<%@ page pageEncoding="Windows-31J"
+	contentType="text/html;charset=Windows-31J" %>
+
+<%--JSTL 1.1.2 core タグライブラリ--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
+<!--スレッド投稿用-->
+<html>
+<head>
+<title>掲示板</title>
+</head>
+<body>
+<h1>掲示板</h1>
+<h2 id="th">投稿する</h2>
+<p>※全項目入力必須</p>
+		<!-- requiredはinputの入力必須属性
+			DBでNotNullにしているので外さないこと--->
+		<!--画像のサイズはとりあえずのやつなのでwidthとheightは外してCSSで調整する
+			下のラジオボタンのところで表示がうまくいっていればここはいらない
+		<p>アイコン</p>
+		<p>1:
+			<img src="image\1.gif" alt="アイコン1" width="40" height="40">
+			2:
+			<img src="image\2.gif" alt="アイコン2" width="40" height="40">
+			3:
+			<img src="image\3.gif" alt="アイコン3" width="40" height="40">
+			4:
+			<img src="image\4.gif" alt="アイコン4" width="40" height="40">
+		</p>
+		-->
+<form action="threadservlet" method="POST">
+
+<table border="1">
+
+<tr>
+<th>アイコン</th>
+<td>
+		<!--画像とサイズはとりあえずのやつなのでサイズのwidthとheightは外してCSSで調整する
+			valueはDBに送るアイコンを見分けるための数字なので重複はしないようにする
+			画像の名前は数字でなくてはいけないわけではないので何でも良い
+			ただし何らかの問題が出る可能性があるためローマ字にすること
+			Cドライブからの絶対パスで指定したが画像が表示されなかったのでimageフォルダをこのjsp
+			と同じ所に置き、その中にアイコン画像を入れ相対パスで指定している-->
+	<input type="radio" value="1" name="icon" required>1:<img src="image\1.gif" alt="アイコン1 width="40" height="40">
+	<input type="radio" value="2" name="icon" required>2:<img src="image\2.gif" alt="アイコン2 width="40" height="40">
+	<input type="radio" value="3" name="icon" required>3:<img src="image\3.gif" alt="アイコン3 width="40" height="40">
+	<input type="radio" value="4" name="icon" required>4:<img src="image\4.gif" alt="アイコン4 width="40" height="40">
+</td>
+</tr>
+<tr>
+	<th>表示名</th>
+	<td>
+		<!--valueの中はデフォルトで表示されるようになっている
+			適当に入れたので変えてもコードに問題は出ない-->
+		<input type="text" size="20" maxlength="20" value="名無し" name="name" required>
+	</td>
+</tr>
+<tr>
+	<th>スレッドタイトル</th>
+	<td>
+		<textarea name="title" rows="5" cols="50" maxlength="100" required></textarea>
+	</td>
+</tr>
+<tr>
+	<th>内容</th>
+	<td>
+		<textarea name="description" rows="10" cols="50" maxlength="200" required></textarea>
+	</td>
+</tr>
+
+</table>
+<br>
+<input type="submit" VALUE="送信">
+<form action="serchservlet" method="POST">
+<input type="search" name="search1" value="検索" placeholder="キーワードを入力">
+<input type="submit" VALUE="検索">
+</form>
+<br>
+<br>
+	<table border="1">
+		<tr><th>スレッドID</th><th>アイコン</th><th>名前</th><th>タイトル</th><th>内容</th><th>日付</th><th>いいね</th><th>閲覧数</th><th>リンク</th></tr>
+		<c:forEach var="_list" items="${thlist}">
+			<tr>
+			<td>${_list.th_id}</td>
+			<td>${_list.th_icon}</td>
+			<td>${_list.th_name}</td>
+			<td>${_list.th_title}</td>
+			<td>${_list.th_description}</td>
+			<td>${_list.th_date}</td>
+			<td>${_list.th_good}</td>
+			<td>${_list.th_view}</td>
+			<td><a href="ResponceServlet?id=${_list.th_id}">a</a></td></tr>
+		</c:forEach>
+	</table>
+<br>
+<a href="#th">投稿する</a>
+
+</form>
+</body>
+</html>
