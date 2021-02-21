@@ -13,19 +13,16 @@ import tera.DBAccess;
 
 public class ResponceServlet extends HttpServlet {
 	private ArrayList<ResponceData> list = new ArrayList<ResponceData>();
+	private String tid;	//th_idを格納する
 	
 	protected void doPost(HttpServletRequest req, HttpServletResponse res)
 	throws ServletException, IOException {
 		
-		doGet(req,res);
 		
 		//POST要求によって送信された文字列をクライアントで
 		//エンコードしたときの文字コードを指定する
 		//これを指定しないと文字化けする可能性がある
 		req.setCharacterEncoding("Windows-31J");
-		
-		String _id=req.getParameter("id");
-		Integer id=Integer.parseInt(_id);
 
 		String ic=req.getParameter("icon");
 		String un=req.getParameter("user_name");
@@ -33,13 +30,12 @@ public class ResponceServlet extends HttpServlet {
 		
 		Integer i=Integer.parseInt(ic);
 		
-		ResponceData resdata=new ResponceData();
-		resdata.setRes_icon(i);
-		resdata.setRes_name(un);
-		resdata.setRes_text(co);
-		
+		tid=req.getParameter("id");
 		DBAccess da=new DBAccess();
-		da.insertRes(id,resdata.getRes_name(),resdata.getRes_icon(),resdata.getRes_text());
+		da.insertRes(tid,un,i,co);
+
+		req.setAttribute("tid",tid);
+
 		
 		doGet(req,res);
 		/*
@@ -68,14 +64,16 @@ public class ResponceServlet extends HttpServlet {
 
 		DBAccess da=new DBAccess();
 
-		String _id=req.getParameter("id");
-		Integer id=Integer.parseInt(_id);
+		tid=req.getParameter("id");
 		
-		list=da.selectRes(id,list);
+		
+		list=da.selectRes(tid,list);
 
 		//HttpServletRequestの実装クラスのインスタンスに
-		//usersという名前でデータを登録する
+		//listという名前でデータを登録する
 		req.setAttribute("list",list);
+
+		req.setAttribute("tid",tid);
 		
 		//RequestDispatcherインターフェイスを実装するクラスの
 		//インスタンスを取得する
