@@ -1,0 +1,126 @@
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.util.ArrayList;
+
+
+import tera.ThreadData;
+import tera.DBAccess;
+
+public class ThreadServlet extends HttpServlet {
+	//とりあえず
+	private ArrayList<ThreadData> td = new ArrayList<ThreadData>();
+	private String _icon;
+	private String _name;
+	private String _title;
+	private String _description;
+	
+	public void doGet(HttpServletRequest req, HttpServletResponse res)
+		throws IOException, ServletException{
+			//特にいじってないからまだ動かないはず
+			res.setContentType("text/html; charset=Windows-31J");
+			
+			//PrintWriter out = res.getWriter();
+			
+			//out.println("<html>");
+			//out.println("<head>");
+			//out.println("<title>GetのTest</title>");
+			//out.println("</head>");
+			//out.println("<body>");
+
+			//out.println("<p>アイコン＝" + _icon + "</p>");
+			//out.println("<p>名前＝" + _name + "</p>");
+			//out.println("<p>タイトル＝" + _title + "</p>");
+			//out.println("<p>内容＝" + _description + "</p>");
+
+			//out.println("</body>");
+			//out.println("</html>");
+			DBAccess db=new DBAccess();
+			td=db.selectTh(td);
+
+			//HttpServletRequestの実装クラスのインスタンスに
+			//usersという名前でデータを登録する
+			req.setAttribute("thlist",td);
+			
+			//RequestDispatcherインターフェイスを実装するクラスの
+			//インスタンスを取得する
+			//引数は転送先のURL
+			RequestDispatcher dispatcher=
+				req.getRequestDispatcher("threadList");
+			
+			//転送先に要求を転送する
+			dispatcher.forward(req,res);
+		}
+			
+	protected void doPost(HttpServletRequest req, HttpServletResponse res)
+		throws IOException, ServletException{
+
+			res.setContentType("text/html; charset=Shift_JIS");
+			req.setCharacterEncoding("Shift-JIS");
+			PrintWriter out = res.getWriter();
+
+			//Integer icon = req.getParameterValues("icon");
+			//String name = req.getParameterValues("name");
+			//String title = req.getParameterValues("title");
+			//String description = req.getParameterValues("description");
+		
+
+		//AddUserServlet参考保留
+			
+			
+			//td.add(th_data);
+			
+			//req.setAttribute("td", td);
+			
+			//POST要求によって送信されたパラメータを取得する
+			String ic = req.getParameter("icon");
+			Integer ico = Integer.parseInt(ic);
+			String na = req.getParameter("name");
+			String ti = req.getParameter("title");
+			String de = req.getParameter("description");
+			
+			
+			DBAccess db=new DBAccess();
+			db.insertTh(ico, na, ti, de);
+			
+			//リストに追加する
+			//td.add(th_data);
+			//HttpServletRequestの実装クラスのインスタンスに
+			//usersという名前でデータを登録する
+			req.setAttribute("th_data",td);
+			/*
+			//RequestDispatcherインターフェイスを実装するクラスの
+			//インスタンスを取得する
+			//引数は転送先のURL
+			RequestDispatcher dispatcher=
+				req.getRequestDispatcher("threadList");
+			
+			//転送先に要求を転送する
+			dispatcher.forward(req,res);
+			*/
+
+			doGet(req,res);
+		//ここまでAddUserServlet
+			//インスタンス変数に格納する
+			//Integer icon=ico;
+			//String name=na;
+			//String title=ti;
+			//String description=de;
+			
+			//out.println("<html>");
+			//out.println("<head>");
+			//out.println("<title>PostのTest</title>");
+			//out.println("</head>");
+			//out.println("<body>");
+
+			//out.println("<p>アイコン＝" + icon + "</p>");
+			//out.println("<p>名前＝" + name + "</p>");
+			//out.println("<p>タイトル＝" + title + "</p>");
+			//out.println("<p>内容＝" + description + "</p>");
+
+			//out.println("</body>");
+			//out.println("</html>");
+	}
+	
+	
+}
