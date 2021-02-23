@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class="background-red top" lang="ja">
+<head>
+<meta charset="Shift-JIS">
+<title>test2</title>
+<!-- font -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<!-- CSS -->
+<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+<link href="css/style.css" rel="stylesheet">
+<!-- JS -->
+<script src="menu.js"></script>
+</head>
+<body>
+
+<div id="post-effect-circle"style="width: 0px; height: 0px; top: 1.05vw; right: 1.6vw;"></div>
+<form id="post-wrapper" class="display-none opacity-zero">
+	<div id="post-close-button" class="post-button" onclick="threadMenuClicked()">
+		<div class="post-close-char">閉じる</div>
+	</div>
+	<div class="post-icon-wrapper">
+		<div class="post-icon-outer">
+			<img class="post-icon-img" src="icon0.svg" onclick="selectIcon(1)">
+		</div>
+		<div class="post-icon-outer">
+			<img class="post-icon-img" src="icon0.svg" onclick="selectIcon(2)">
+		</div>
+		<div class="post-icon-outer">
+			<img class="post-icon-img" src="icon0.svg" onclick="selectIcon(3)">
+		</div>
+		<div class="post-icon-outer">
+			<img class="post-icon-img" src="icon0.svg" onclick="selectIcon(4)">
+		</div>
+	</div>
+	<div class="post-input-wrapper">
+		名前<br>
+		<textarea class="post-input-textarea-A post-input-textarea" name="name" placeholder="何文字まで" required></textarea>
+		<br>本文<br>
+		<textarea class="post-input-textarea-B post-input-textarea" name="content" placeholder="何文字まで" required></textarea>
+		<br>
+		<input class="submit-button post-submit-button" type="submit" value="投稿">
+	</div>
+	<span class="display-none">
+		<input type="radio" name="icon" value="1" checked>
+		<input type="radio" name="icon" value="2">
+		<input type="radio" name="icon" value="3">
+		<input type="radio" name="icon" value="4">
+	</span>
+</form>
+<div id="post-effect-background" class="display-none"></div>
+
+<span id="content">
+<div class="article-background-hide"></div>
+<div class="menu-sun-outer">
+	<a href="#top">
+		<img src="sun.svg">
+	</a>
+</div>
+<span class="article-icon-wrapper">
+	<img class="article-icon-img" src="icon0.svg">
+	<p class="article-name-char">投稿者名<br>あいう</p>
+</span>
+<div class="article-square"></div>
+<div class="article-circle-wrapper">
+	<span class="article-circle-outer"></span>
+</div>
+<div class="article-wrapper">
+	<p class="article-title-char">タイトル</p>
+	<p class="article-content-char">あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。<br>またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。</p>
+	<div class="article-etc-wrapper">
+		<p class="article-etc-char">投稿ID:888888</p>
+		<p class="article-etc-char">投稿日時:8888/88/88 88:88</p>
+		<p class="article-etc-char">閲覧数:8888</p>
+		<p class="article-etc-char">いいね数:8888</p>
+	</div>
+	<div class="article-good-outer">
+		<img class="article-good-img" src="good.svg">
+	</div>
+	<p class="article-big-char">コメント</p>
+	<div class="comment-circle-wrapper">
+		<span class="comment-circle-outer">
+			<img class="comment-icon-img" src="icon0.svg"><br>
+			<span class="comment-name-char">コメント者名</span>
+			<br>
+			<p class="comment-content-char">コメントの内容</p>
+			<br>
+			<span class="comment-time-char">8888/88/88 88:88</span>
+		</span>
+		<span class="comment-circle-outer"></span>
+		<span class="comment-circle-outer"></span>
+		<span class="comment-circle-outer"></span>
+		<span class="comment-circle-outer"></span>
+	</div>
+		<div class="comment-circle-wrapper">
+		<span class="comment-circle-outer"></span>
+		<span class="comment-circle-outer"></span>
+		<span class="comment-circle-outer"></span>
+		<span class="comment-circle-outer"></span>
+	</div>
+	<div class="comment-circle-wrapper">
+		<span class="comment-circle-outer"></span>
+		<span class="comment-circle-outer"></span>
+		<span class="comment-circle-outer"></span>
+		<span class="comment-circle-outer"></span>
+		<span class="comment-circle-outer comment-post-button">
+			<span class="comment-open-post-button comment-post-button" onclick="responceMenuClicked()">
+				<p>コメント<br>する</p>
+			</span>
+		</span>
+	</div>
+	<div class="bottom-margin"></div>
+</div>
+</span>
+</html>

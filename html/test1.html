@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html id="top background-red" lang="ja">
+<head>
+<meta charset="Shift-JIS">
+<title>test</title>
+<!-- font -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<!-- CSS -->
+<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+<link href="css/style.css" rel="stylesheet">
+<!-- JS -->
+<script src="menu.js"></script>
+</head>
+<!-- 改行すると余計な空白が発生する可能性あり -->
+<body>
+
+<div class="post-button" onclick="threadMenuClicked()">
+	<div class="post-open-char-A">投稿</div>
+	<div class="post-open-char-B">する</div>
+</div>
+<div id="post-effect-circle"style="width: 0px; height: 0px; top: 1.05vw; right: 1.6vw;"></div>
+<form id="post-wrapper" class="display-none opacity-zero">
+	<div id="post-close-button" class="post-button" onclick="threadMenuClicked()">
+		<div class="post-close-char">閉じる</div>
+	</div>
+	<div class="post-icon-wrapper">
+		<div class="post-icon-outer">
+			<img class="post-icon-img" src="icon0.svg" onclick="selectIcon(1)">
+		</div>
+		<div class="post-icon-outer">
+			<img class="post-icon-img" src="icon0.svg" onclick="selectIcon(2)">
+		</div>
+		<div class="post-icon-outer">
+			<img class="post-icon-img" src="icon0.svg" onclick="selectIcon(3)">
+		</div>
+		<div class="post-icon-outer">
+			<img class="post-icon-img" src="icon0.svg" onclick="selectIcon(4)">
+		</div>
+	</div>
+	<div class="post-input-wrapper">
+		名前<br>
+		<textarea class="post-input-textarea-A post-input-textarea" name="name" placeholder="何文字まで" required></textarea>
+		<br>タイトル<br>
+		<textarea class="post-input-textarea-A post-input-textarea" name="title" placeholder="何文字まで" required></textarea>
+		<br>本文<br>
+		<textarea class="post-input-textarea-B post-input-textarea" name="content" placeholder="何文字まで" required></textarea>
+		<br>
+		<input class="submit-button post-submit-button" type="submit" value="投稿">
+	</div>
+	<span class="display-none">
+		<input type="radio" name="icon" value="1" checked>
+		<input type="radio" name="icon" value="2">
+		<input type="radio" name="icon" value="3">
+		<input type="radio" name="icon" value="4">
+	</span>
+</form>
+
+<span id="content">
+<div class="menu-sun-outer">
+	<a href="#top">
+		<img src="sun.svg">
+	</a>
+</div><!-- クリック判定の都合上svg直貼りが必要 -->
+<div class="menu-cloud-outer">
+	<img src="kumo.svg">
+</div>
+<form class="menu-input-wrapper">
+	<span class="menu-input-margin-left"></span>
+	検索：
+	<textarea name="search" placeholder="ここに入力"></textarea>
+	<span class="menu-input-margin-center"></span>
+	<input class="submit-button" type="submit" value="検索">
+	<br>並び替え：
+	<span class="menu-pulldown-arrow">▼</span>
+	<select class="menu-select" name="sort">
+		<option class="menu-pulldown-list" value="view">閲覧数</option>
+		<option class="menu-pulldown-list" value="good">いいね数</option>
+	</select>
+</form>
+<div class="list-circle-wrapper list-top-margin">
+	<a href="#top" class="list-circle-outer">
+		<img class="list-icon-img" src="icon0.svg">
+		<br>
+		<span class="list-title-char">スレッドタイトル</span>
+		<br>
+		<div class="list-name-char">投稿者:虹猫</div>
+		<br>
+		<span class="list-etc-char">表示回数:8888<br>コメント数:8888<br>いいね数:8888</span>
+		<br>
+		<span class="list-time-char">8888/88/88</span>
+	</a>
+	<a href="#top" class="list-circle-outer">002</a>
+	<a href="#top" class="list-circle-outer">003</a>
+</div>
+<div class="list-circle-wrapper">
+	<a href="#top" class="list-circle-outer">004</a>
+	<a href="#top" class="list-circle-outer">005</a>
+	<a href="#top" class="list-circle-outer">006</a>
+	<a href="#top" class="list-circle-outer">007</a>
+</div>
+<div class="list-circle-wrapper">
+	<a href="#top" class="list-circle-outer">008</a>
+	<a href="#top" class="list-circle-outer">009</a>
+	<a href="#top" class="list-circle-outer">010</a>
+</div>
+<div class="bottom-margin"></div>
+</span>
+</html>
