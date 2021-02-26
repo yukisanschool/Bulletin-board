@@ -46,6 +46,7 @@ INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, 'ウサギの生態につ
 INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, 'いい睡眠の取り方', '寝不足人間', 4, DEFAULT, '寝れないよーーーーー', DEFAULT, DEFAULT);
 INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, 'お気に入りの観光名所', 'tabibito', 3, DEFAULT, '', DEFAULT, DEFAULT);
 INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, '犬のしつけ方', 'わんこ', 1, DEFAULT, '待てを覚えさせたい', DEFAULT, DEFAULT);
+commit;
 
 /*レスデータ*/
 INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 1, '名無し', 2, '選ばれたのは綾鷹でした。', DEFAULT, DEFAULT);
@@ -55,3 +56,4 @@ INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 2, '名無し', 2, 'ウサ�
 INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 4, '名無し', 4, '京都の銀閣寺かな', DEFAULT, DEFAULT);
 INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 5, '名無し', 2, 'できたらおやつあげてたくさん褒めてる', DEFAULT, DEFAULT);
 INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 3, '名無し', 1, '寝る前にブルーライト見ると良くないって言うよね', DEFAULT, DEFAULT);
+commit;
