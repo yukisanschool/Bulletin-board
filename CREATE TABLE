@@ -39,3 +39,6 @@ CREATE SEQUENCE t10_test1
   MINVALUE 1
   NOCYCLE
 ;
+
+/*スレッドテストデータ*/
+
