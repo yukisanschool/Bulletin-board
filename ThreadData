@@ -1,0 +1,67 @@
+//teraファイルの中に入れる
+package tera;
+
+import java.io.Serializable;
+import java.sql.Date;
+
+public class ThreadData implements Serializable{
+	private int th_id;
+	private String th_title;
+	private String th_name;
+	private int th_icon;
+	private String th_description;
+	private int th_view;
+	private int th_good;
+	private String th_date;
+	
+	public ThreadData(){}
+	
+	public int getTh_id(){
+		return th_id;
+	}
+	public void setTh_id(int ti){
+		th_id=ti;
+	}
+	public String getTh_title(){
+		return th_title;
+	}
+	public void setTh_title(String tt){
+		th_title=tt;
+	}
+	public String getTh_name(){
+		return th_name;
+	}
+	public void setTh_name(String tn){
+		th_name=tn;
+	}
+	public int getTh_icon(){
+		return th_icon;
+	}
+	public void setTh_icon(int ti){
+		th_icon=ti;
+	}
+	public String getTh_description(){
+		return th_description;
+	}
+	public void setTh_description(String td){
+		th_description=td;
+	}
+	public int getTh_view(){
+		return th_view;
+	}
+	public void setTh_view(int tv){
+		th_view=tv;
+	}
+	public int getTh_good(){
+		return th_good;
+	}
+	public void setTh_good(int tg){
+		th_good=tg;
+	}
+	public String getTh_date(){
+		return th_date;
+	}
+	public void setTh_date(String tda){
+		th_date=tda;
+	}
+}
