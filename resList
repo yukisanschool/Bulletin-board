@@ -8,40 +8,48 @@
     <head><title>掲示板サイト</title></head>
     <body>
     <p>掲示板</p>
-    	
-
+    
+    
     <form method="POST" action="ResponceServlet?id=${tid}">
-
+	<br>
+	<br>
 	<table border="1">
-	<tr><th>日付</th><th>アイコン</th><th>名前</th><th>内容</th></tr>
-	<c:forEach var="_list" items="${list}">
-		<tr><td>${_list.res_date}</td><td>${_list.res_icon}</td><td>${_list.res_name}</td><td>${_list.res_text}</td></tr>
-	</c:forEach>
+		<tr><th>スレッドID</th><th>アイコン</th><th>名前</th><th>タイトル</th><th>内容</th><th>日付</th></tr>
+		<c:forEach var="_rlist" items="${rlist}">
+			<tr>
+			<td>${_rlist.th_id}</td>
+			<td>${_rlist.th_icon}</td>
+			<td>${_rlist.th_name}</td>
+			<td>${_rlist.th_title}</td>
+			<td>${_rlist.th_description}</td>
+			<td>${_rlist.th_date}</td>
+			</tr>
+		</c:forEach>
 	</table>
-    
-
-    
-    <div>アイコンを選んでください</div>
-        <ul>
-            <li><input type="radio"  value="1" name="icon">1</label></li>
-            <li><input type="radio"  value="2" name="icon">2</label></li>
-            <li><input type="radio"  value="3" name="icon">3</label></li>
-            <li><input type="radio"  value="4" name="icon">4</label></li>
-            <li><input type="radio"  value="5" name="icon">5</label></li>
-        </ul>
-        <p>作成者</p>
-            <input type="text" name="user_name"><br><br>
-        <p>内容</p>
-            <textarea name="contents" rows="8" cols="40"></textarea><br><br>
-        <input type="submit" name="btn1" value="投稿する"><br></br>
-        <input type="search" name="search1" value="検索">
-    </form>
-        <a href="http://localhost:8080/myapps/threadservlet">スレッド一覧に戻る</a>
-        
-        
-    
-        
+	<br>
+	<table border="1">
+		<tr><th>日付</th><th>アイコン</th><th>名前</th><th>内容</th></tr>
+		<c:forEach var="_list" items="${list}">
+			<tr><td>${_list.res_date}</td><td>${_list.res_icon}</td><td>${_list.res_name}</td><td>${_list.res_text}</td></tr>
+		</c:forEach>
+	</table>
 	
-
+	
+	
+    <div>アイコンを選んでください</div>
+    	<ul>
+	        <li><input type="radio"  value="1" name="icon">1</label></li>
+	        <li><input type="radio"  value="2" name="icon">2</label></li>
+	        <li><input type="radio"  value="3" name="icon">3</label></li>
+	        <li><input type="radio"  value="4" name="icon">4</label></li>
+    	</ul>
+	    <p>作成者</p>
+	        <input type="text" name="user_name"><br><br>
+	    <p>内容</p>
+	        <textarea name="contents" rows="8" cols="40"></textarea><br><br>
+	    <input type="submit" name="btn1" value="投稿する"><br></br>
+	</form>
+		<a href="http://localhost:8080/myapps/threadservlet">スレッド一覧に戻る</a>
+		
     </body>
     </html>
