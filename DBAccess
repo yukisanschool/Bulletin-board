@@ -1,4 +1,5 @@
 //javac -cp C:\tomcat8.5\webapps\myapps\WEB-INF\classes DBAccess.java
+//teraというファイルを作って中に入れる
 package tera;
 
 import java.io.IOException;
@@ -22,15 +23,15 @@ public class DBAccess{
 			Connection cn=
 				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl",
 				"info","pro");
+			System.out.println("接続完了");
 			
 			//insert文
-			String sql="INSERT INTO board_thread VALUES(test1.NEXTVAL, '"+title+"',' "+name+"', "+icon+", DEFAULT, '"+description+"', DEFAULT, DEFAULT)";
+			String sql="INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, '"+title+"',' "+name+"', "+icon+", DEFAULT, '"+description+"', DEFAULT, DEFAULT)";
 			//Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
 			//select文を実行し
 			//ResultSetインターフェイスを実装したクラスの
 			//インスタンスが返る
-			//ResultSet rs=st.executeQuery(sql);
 			//insert文を実行し
 			//ResultSetインターフェイスを実装したクラスの
 			//インスタンスが返る
@@ -38,6 +39,7 @@ public class DBAccess{
 			//Oracleから切断する
 			cn.close();
 
+			System.out.println("切断完了");
 		}catch(ClassNotFoundException e){
 			e.printStackTrace();
 			System.out.println("クラスがないみたい。");
@@ -48,16 +50,16 @@ public class DBAccess{
 			e.printStackTrace();
 		}
 	}
-	public void insertRes(String tid,String res_name,int res_icon,String res_text){
+	public void insertRes(String tid, String res_name, int res_icon, String res_text){
         try{
         	Class.forName("oracle.jdbc.driver.OracleDriver");
-            //Oracleに接続する
+        //Oracleに接続する
 			Connection cn=
 				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
             
-			int th_id=Integer.parseInt(tid);
-
-            String sql="INSERT INTO board_res VALUES(test1.NEXTVAL,"+th_id+",'"+res_name+"',"+res_icon+",'"+res_text+"',DEFAULT,DEFAULT)";
+        	int th_id=Integer.parseInt(tid);
+        	
+            String sql="INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL,"+th_id+",'"+res_name+"',"+res_icon+",'"+res_text+"',DEFAULT,DEFAULT)";
             //Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
 
@@ -88,8 +90,8 @@ public class DBAccess{
 			Connection cn=
 				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
 		
-			String sql=" SELECT th_id, th_icon, th_name, th_title, th_description, th_date, th_good, th_view FROM board_thread";
-
+			String sql=" SELECT th_id, th_icon, th_name, th_title, th_description, TO_CHAR(th_date, 'YYYY-MM-DD HH24:MI'), th_good, th_view FROM t10_board_thread ORDER BY th_id DESC";
+			
 			//Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
 
@@ -110,7 +112,7 @@ public class DBAccess{
 				td.setTh_name(rs.getString(3));
 				td.setTh_title(rs.getString(4));
 				td.setTh_description(rs.getString(5));
-				td.setTh_date(rs.getDate(6));
+				td.setTh_date(rs.getString(6));
 				BigDecimal _good =rs.getBigDecimal(7);
 				int good=_good.intValue();
 				td.setTh_good(good);
@@ -134,20 +136,73 @@ public class DBAccess{
 		}
 		return list;
     }
+	
+	public ArrayList<ThreadData> selectThid(int tid, ArrayList<ThreadData> list){
+	try{
+        	Class.forName("oracle.jdbc.driver.OracleDriver");
+        	
+            //Oracleに接続する
+			Connection cn=
+				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
+		
+			String sql=" SELECT th_id, th_icon, th_name, th_title, th_description, TO_CHAR(th_date, 'YYYY-MM-DD HH24:MI'), th_good, th_view FROM t10_board_thread WHERE th_id="+tid;
+			
+			//Statementインターフェイスを実装するクラスをインスタンス化する
+			Statement st=cn.createStatement();
 
-    public ArrayList<ResponceData> selectRes(String tid,ArrayList<ResponceData> list){
+			//select文を実行し
+			//ResultSetインターフェイスを実装したクラスの
+			//インスタンスが返る
+			ResultSet rs=st.executeQuery(sql);
+			list.clear();
+			while (rs.next()) {
+				ThreadData td = new ThreadData();
+				//データを取得する
+				BigDecimal _id =rs.getBigDecimal(1);
+				int id=_id.intValue();
+				td.setTh_id(id);
+				BigDecimal _icon =rs.getBigDecimal(2);
+				int icon=_icon.intValue();
+				td.setTh_icon(icon);
+				td.setTh_name(rs.getString(3));
+				td.setTh_title(rs.getString(4));
+				td.setTh_description(rs.getString(5));
+				td.setTh_date(rs.getString(6));
+				BigDecimal _good =rs.getBigDecimal(7);
+				int good=_good.intValue();
+				td.setTh_good(good);
+				BigDecimal _view =rs.getBigDecimal(8);
+				int view=_view.intValue();
+				td.setTh_view(view);
+				list.add(td);
+			}
+			
+            
+            //Oracleから切断する
+            cn.close();
+        }catch(ClassNotFoundException e){
+			e.printStackTrace();
+			System.out.println("クラスがないみたい。");
+		}catch(SQLException e){
+			e.printStackTrace();
+			System.out.println("SQL関連の例外みたい。");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return list;
+    }
+	
+    public ArrayList<ResponceData> selectRes(String tid, ArrayList<ResponceData> list){
         try{
         	Class.forName("oracle.jdbc.driver.OracleDriver");
-
         	
             //Oracleに接続する
 			Connection cn=
 				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
 			
-			int th_id=Integer.parseInt(tid);
-			
-			String sql=" SELECT res_id, res_name, res_icon, res_text, res_good, res_date FROM board_res WHERE th_id="+th_id;
-
+        	int th_id=Integer.parseInt(tid);
+        	
+			String sql=" SELECT res_id, res_name, res_icon, res_text, res_good, TO_CHAR(res_date, 'YYYY-MM-DD HH24:MI') FROM t10_board_res WHERE th_id="+th_id+"ORDER BY res_id";
 
 			//Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
@@ -171,9 +226,10 @@ public class DBAccess{
 				BigDecimal _good =rs.getBigDecimal(5);
 				int good=_good.intValue();
 				r.setRes_good(good);
-				r.setRes_date(rs.getDate(6));
+				r.setRes_date(rs.getString(6));
 				list.add(r);
 			}
+			
             
             //Oracleから切断する
             cn.close();
@@ -189,5 +245,4 @@ public class DBAccess{
 		return list;
     }
 }
-
 
