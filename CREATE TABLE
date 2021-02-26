@@ -44,7 +44,7 @@ CREATE SEQUENCE t10_test1
 INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, 'おいしい飲み物', '名無し', 2, DEFAULT, 'なんかいいものない？', DEFAULT, DEFAULT);
 INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, 'ウサギの生態について', '飼い主', 1, DEFAULT, 'みんな教えてーー', DEFAULT, DEFAULT);
 INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, 'いい睡眠の取り方', '寝不足人間', 4, DEFAULT, '寝れないよーーーーー', DEFAULT, DEFAULT);
-INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, 'お気に入りの観光名所', 'tabibito', 3, DEFAULT, '', DEFAULT, DEFAULT);
+INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, 'お気に入りの観光名所', 'tabibito', 3, DEFAULT, 'みんなのお気に入り教えて', DEFAULT, DEFAULT);
 INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, '犬のしつけ方', 'わんこ', 1, DEFAULT, '待てを覚えさせたい', DEFAULT, DEFAULT);
 commit;
 
