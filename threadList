@@ -17,6 +17,7 @@
 		<!-- requiredはinputの入力必須属性
 			DBでNotNullにしているので外さないこと--->
 		<!--画像のサイズはとりあえずのやつなのでwidthとheightは外してCSSで調整する
+		
 			下のラジオボタンのところで表示がうまくいっていればここはいらない
 		<p>アイコン</p>
 		<p>1:
@@ -72,30 +73,29 @@
 </table>
 <br>
 <input type="submit" VALUE="送信">
-<form action="serchservlet" method="POST">
+</form>
+<!--<form action="serchservlet" method="POST">
 <input type="search" name="search1" value="検索" placeholder="キーワードを入力">
 <input type="submit" VALUE="検索">
-</form>
+</form>-->
 <br>
 <br>
 	<table border="1">
-		<tr><th>スレッドID</th><th>アイコン</th><th>名前</th><th>タイトル</th><th>内容</th><th>日付</th><th>いいね</th><th>閲覧数</th><th>リンク</th></tr>
+		<tr><th>スレッドID</th><th>アイコン</th><th>名前</th><th>タイトル</th><th>内容</th><th>日付</th></tr>
 		<c:forEach var="_list" items="${thlist}">
 			<tr>
-			<td>${_list.th_id}</td>
+			<td><a href="ResponceServlet?id=${_list.th_id}">${_list.th_id}</a></td>
 			<td>${_list.th_icon}</td>
 			<td>${_list.th_name}</td>
 			<td>${_list.th_title}</td>
 			<td>${_list.th_description}</td>
 			<td>${_list.th_date}</td>
-			<td>${_list.th_good}</td>
-			<td>${_list.th_view}</td>
-			<td><a href="ResponceServlet?id=${_list.th_id}">a</a></td></tr>
+			</tr>
 		</c:forEach>
 	</table>
 <br>
-<a href="#th">投稿する</a>
-
 </form>
+<a href="#th">投稿する</a>
 </body>
 </html>
+
