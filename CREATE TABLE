@@ -1,6 +1,6 @@
 /*スレッド*/
 CREATE TABLE t10_board_thread(
-	th_id 		NUMBER(6) 		NOT NULL CONSTRAINT PK_Thread_id PRIMARY KEY
+	th_id 		NUMBER(6) 		NOT NULL CONSTRAINT PK_10Thread_id PRIMARY KEY
    ,th_title 	VARCHAR2(100) 	NOT NULL
    ,th_name 	VARCHAR2(20) 	NOT NULL
    ,th_icon 	NUMBER(2) 		NOT NULL
@@ -13,8 +13,8 @@ CREATE TABLE t10_board_thread(
 
 /*レス*/
 CREATE TABLE t10_board_res(
-    res_id      number(6)       NOT NULL CONSTRAINT PK_board_res_Rid PRIMARY KEY
-    ,th_id      number(6)       NOT NULL CONSTRAINT FK_board_res_Tid REFERENCES t10_board_thread(th_id)
+    res_id      number(6)       NOT NULL CONSTRAINT PK_10res_Rid PRIMARY KEY
+    ,th_id      number(6)       NOT NULL CONSTRAINT FK_10res_Tid REFERENCES t10_board_thread(th_id)
     ,res_name   varchar2(20)    NOT NULL
     ,res_icon   number(2)       NOT NULL
     ,res_text   varchar2(500)   NOT NULL
