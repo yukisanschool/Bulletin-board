@@ -48,10 +48,10 @@ INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, 'お気に入りの観光
 INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, '犬のしつけ方', 'わんこ', 1, DEFAULT, '待てを覚えさせたい', DEFAULT, DEFAULT);
 
 /*レスデータ*/
-INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 1, '名無し', 2, '選ばれたのは綾鷹でした。' DEFAULT, DEFAULT);
-INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 1, '名無し', 3, 'コーラだね' DEFAULT, DEFAULT);
-INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 2, '名無し', 1, '寂しいと死ぬって本当は違うらしいよ、環境が変わるとだめなんだって。' DEFAULT, DEFAULT);
-INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 2, '名無し', 2, 'ウサギってにんじんのイメージが強いけど糖分が多いからあんまり良くないんだって' DEFAULT, DEFAULT);
-INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 4, '名無し', 4, '京都の銀閣寺かな' DEFAULT, DEFAULT);
-INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 5, '名無し', 2, 'できたらおやつあげてたくさん褒めてる' DEFAULT, DEFAULT);
-INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 3, '名無し', 1, '寝る前にブルーライト見ると良くないって言うよね' DEFAULT, DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 1, '名無し', 2, '選ばれたのは綾鷹でした。', DEFAULT, DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 1, '名無し', 3, 'コーラだね', DEFAULT, DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 2, '名無し', 1, '寂しいと死ぬって本当は違うらしいよ、環境が変わるとだめなんだって。', DEFAULT, DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 2, '名無し', 2, 'ウサギってにんじんのイメージが強いけど糖分が多いからあんまり良くないんだって', DEFAULT, DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 4, '名無し', 4, '京都の銀閣寺かな', DEFAULT, DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 5, '名無し', 2, 'できたらおやつあげてたくさん褒めてる', DEFAULT, DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 3, '名無し', 1, '寝る前にブルーライト見ると良くないって言うよね', DEFAULT, DEFAULT);
