@@ -1,0 +1,62 @@
+//teraファイルの中に入れること
+package tera;
+
+import java.io.Serializable;
+import java.sql.Date;
+
+public class ResponceData implements Serializable{
+	private int res_id;
+	private int th_id;
+	private String res_name;
+	private int res_icon;
+	private String res_text;
+	private int res_good;
+	private String res_date;
+	
+	public ResponceData(){}
+	
+	public int getRes_id(){
+		return res_id;
+	}
+	public void setRes_id(int res_id){
+		this.res_id = res_id;
+	}
+	public int getTh_id(){
+		return th_id;
+	}
+	public void setTh_id(int th_id){
+		this.th_id = th_id;
+	}
+	public String getRes_name(){
+		return res_name;
+	}
+	public void setRes_name(String res_name){
+		this.res_name = res_name;
+	}
+	public int getRes_icon(){
+		return res_icon;
+	}
+	public void setRes_icon(int res_icon){
+		this.res_icon = res_icon;
+	}
+	public String getRes_text(){
+		return res_text;
+	}
+	public void setRes_text(String res_text){
+		this.res_text = res_text;
+	}
+	public int getRes_good(){
+		return res_good;
+	}
+	public void setRes_good(int res_good){
+		this.res_good = res_good;
+	}
+	public String getRes_date(){
+		return res_date;
+	}
+	public void setRes_date(String res_date){
+		this.res_date = res_date;
+	}
+
+
+}
