@@ -8,10 +8,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 
+import tera.ThreadData;
 import tera.ResponceData;
 import tera.DBAccess;
 
 public class ResponceServlet extends HttpServlet {
+	
+	private ArrayList<ThreadData> rlist = new ArrayList<ThreadData>();
 	private ArrayList<ResponceData> list = new ArrayList<ResponceData>();
 	private String tid;	//th_idを格納する
 	
@@ -23,7 +26,7 @@ public class ResponceServlet extends HttpServlet {
 		//エンコードしたときの文字コードを指定する
 		//これを指定しないと文字化けする可能性がある
 		req.setCharacterEncoding("Windows-31J");
-
+		
 		String ic=req.getParameter("icon");
 		String un=req.getParameter("user_name");
 		String co=req.getParameter("contents");
@@ -33,27 +36,12 @@ public class ResponceServlet extends HttpServlet {
 		tid=req.getParameter("id");
 		DBAccess da=new DBAccess();
 		da.insertRes(tid,un,i,co);
-
+		
 		req.setAttribute("tid",tid);
-
+		
 		
 		doGet(req,res);
-		/*
-		list.add(resdata);
 		
-		//HttpServletRequestの実装クラスのインスタンスに
-		//usersという名前でデータを登録する
-		req.setAttribute("list",list);
-		
-		//RequestDispatcherインターフェイスを実装するクラスの
-		//インスタンスを取得する
-		//引数は転送先のURL
-		RequestDispatcher dispatcher=
-			req.getRequestDispatcher("resList");
-		
-		//転送先に要求を転送する
-		dispatcher.forward(req,res);
-		*/
 
 	}
 	protected void doGet(HttpServletRequest req, HttpServletResponse res)
@@ -63,16 +51,18 @@ public class ResponceServlet extends HttpServlet {
 		PrintWriter out = res.getWriter();
 
 		DBAccess da=new DBAccess();
-
+		
 		tid=req.getParameter("id");
 		
-		
+		Integer ttid = Integer.parseInt(tid);
+		rlist=da.selectThid(ttid,rlist);
 		list=da.selectRes(tid,list);
 
 		//HttpServletRequestの実装クラスのインスタンスに
-		//listという名前でデータを登録する
+		//usersという名前でデータを登録する
+		req.setAttribute("rlist",rlist);
 		req.setAttribute("list",list);
-
+		
 		req.setAttribute("tid",tid);
 		
 		//RequestDispatcherインターフェイスを実装するクラスの
