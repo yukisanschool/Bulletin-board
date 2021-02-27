@@ -16,20 +16,6 @@
 <p>※全項目入力必須</p>
 		<!-- requiredはinputの入力必須属性
 			DBでNotNullにしているので外さないこと--->
-		<!--画像のサイズはとりあえずのやつなのでwidthとheightは外してCSSで調整する
-		
-			下のラジオボタンのところで表示がうまくいっていればここはいらない
-		<p>アイコン</p>
-		<p>1:
-			<img src="image\1.gif" alt="アイコン1" width="40" height="40">
-			2:
-			<img src="image\2.gif" alt="アイコン2" width="40" height="40">
-			3:
-			<img src="image\3.gif" alt="アイコン3" width="40" height="40">
-			4:
-			<img src="image\4.gif" alt="アイコン4" width="40" height="40">
-		</p>
-		-->
 <form action="threadservlet" method="POST">
 
 <table border="1">
@@ -39,8 +25,7 @@
 <td>
 		<!--画像とサイズはとりあえずのやつなのでサイズのwidthとheightは外してCSSで調整する
 			valueはDBに送るアイコンを見分けるための数字なので重複はしないようにする
-			画像の名前は数字でなくてはいけないわけではないので何でも良い
-			ただし何らかの問題が出る可能性があるためローマ字にすること
+			画像の名前は数字にすること必ずvalueと同じもの
 			Cドライブからの絶対パスで指定したが画像が表示されなかったのでimageフォルダをこのjsp
 			と同じ所に置き、その中にアイコン画像を入れ相対パスで指定している-->
 	<input type="radio" value="1" name="icon" required>1:<img src="image\1.gif" alt="アイコン1 width="40" height="40">
@@ -50,7 +35,7 @@
 </td>
 </tr>
 <tr>
-	<th>表示名</th>
+	<th>作成者</th>
 	<td>
 		<!--valueの中はデフォルトで表示されるようになっている
 			適当に入れたので変えてもコードに問題は出ない-->
@@ -72,7 +57,7 @@
 
 </table>
 <br>
-<input type="submit" VALUE="送信">
+<input type="submit" VALUE="投稿する">
 </form>
 <!--<form action="serchservlet" method="POST">
 <input type="search" name="search1" value="検索" placeholder="キーワードを入力">
@@ -85,7 +70,7 @@
 		<c:forEach var="_list" items="${thlist}">
 			<tr>
 			<td><a href="ResponceServlet?id=${_list.th_id}">${_list.th_id}</a></td>
-			<td>${_list.th_icon}</td>
+			<td><img src="image/${_list.th_icon}.gif" alt="アイコン" width="40" height="40"></td>
 			<td>${_list.th_name}</td>
 			<td>${_list.th_title}</td>
 			<td>${_list.th_description}</td>
