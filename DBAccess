@@ -89,8 +89,8 @@ public class DBAccess{
             //Oracleに接続する
 			Connection cn=
 				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
-		
-			String sql=" SELECT th_id, th_icon, th_name, th_title, th_description, TO_CHAR(th_date, 'YYYY-MM-DD HH24:MI'), th_good, th_view FROM t10_board_thread ORDER BY th_id DESC";
+			//わざと昇順にしている
+			String sql=" SELECT th_id, th_icon, th_name, th_title, th_description, TO_CHAR(th_date, 'YYYY-MM-DD HH24:MI'), th_good, th_view FROM t10_board_thread ORDER BY th_id";
 			
 			//Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
