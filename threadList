@@ -79,7 +79,6 @@
 		</c:forEach>
 	</table>
 <br>
-</form>
 <a href="#th">投稿する</a>
 </body>
 </html>
