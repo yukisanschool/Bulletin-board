@@ -70,7 +70,10 @@ textarea:focus {
 .display-none{
     display: none !important;
 }
-
+/*クリックイベント無効*/
+.pointer-events-none{
+	pointer-events: none
+}
 /*投稿メニュー
 ----------------------------------------------------------*/
 /*# testMenuOpen			post-open-button	"投稿する"ボタン*/
@@ -83,7 +86,7 @@ textarea:focus {
 	height: 6vw;
 	background: #FDEADD;
 	border-radius: 50%;
-	z-index: -1;
+	z-index: 2;
 	line-height: 1.1;
 	text-align: center;
 	display: flex;
@@ -104,8 +107,12 @@ textarea:focus {
 	width: 0px;
 	height: 0px;
 	border-radius: 50%;
-	z-index: 1;
-	transition: 0.3s;
+	z-index: 5;
+	transition: all 0.3s;
+}
+/*												穴をあけるつもりだった*/
+.effect-donut{
+	background: radial-gradient(circle, transparent 0%, transparent 98%, #D43333 99%, #D43333 100%) !important;
 }
 /*# Menu					post-wrapper		投稿メニューを覆っているアレ*/
 #post-wrapper{
@@ -113,7 +120,7 @@ textarea:focus {
 }
 /*# testMenuClose			post-close-button	閉じるボタン*/
 #post-close-button{
-	z-index: 2;
+	z-index: 4;
 }
 /*. testIconSet				post-icon-wrapper	アイコン選択ボタンを覆っているアレ*/
 .post-icon-wrapper{
@@ -128,7 +135,7 @@ textarea:focus {
   background: -moz-linear-gradient(left, #D73F3E, #D43333 60%);
   background: -webkit-linear-gradient(left, #D73F3E, #D43333 60%);
   background: linear-gradient(to right, #D73F3E, #D43333 60%);
-  z-index: 1;
+  z-index: 3;
 }
 /*. testIconSetDiv			post-icon-outer		アイコン選択ボタンの幅*/
 .post-icon-outer{
@@ -136,9 +143,16 @@ textarea:focus {
 }
 /*. testIconSetImg			post-icon-img		アイコン選択ボタンの画像*/
 .post-icon-img{
-	width: 20vh;
-	margin: 2.5vh;
+	width: 25vh;
+	padding: 2.5vh;
 	cursor: pointer;
+}
+.post-icon-img:hover{
+	background: rgba(255, 255, 255, 0.2);
+	transition: 0.3s;
+}
+.post-icon-effect{
+	background: rgba(255, 255, 255, 0.3) !important;
 }
 /*. testToukouMenu			post-input-wrapper	テキストボックスを覆っているアレ*/
 .post-input-wrapper{
@@ -154,17 +168,17 @@ textarea:focus {
 	
 	font-size: 3.5vh;
 	line-height: 1.4;
-	z-index: 1;
+	z-index: 3;
 }
 /*. testTextNyuuryokuA		post-input-textarea-A	テキストボックスの高さが短い方*/
 .post-input-textarea-A{
 	height: 5vh !important;
-	z-index: 1;
+	z-index: 3;
 }
 /*. testTextNyuuryokuB		post-input-textarea-B	テキストボックスの高さが長い方*/
 .post-input-textarea-B{
 	height: 40vh !important;
-	z-index: 1;
+	z-index: 3;
 }
 /*. testTextarea			post-input-textarea		メニューのテキストボックス全般の書式*/
 .post-input-textarea{
@@ -213,7 +227,12 @@ textarea:focus {
 	top: 0;
 	left: 0;
 	width: 27vw;
-	z-index: -2;
+	z-index: 1;
+	border-style:none;
+}
+.menu-sun-outer tspan:hover{
+	fill: #FDEADD !important;
+	transition: 0.3s;
 }
 /*. testKumoDiv				menu-cloud-outer			メニューの雲の書式*/
 .menu-cloud-outer{
@@ -222,7 +241,7 @@ textarea:focus {
 	right: 0;
 	width: 59vw;
 	pointer-events: none;
-	z-index: -2;
+	z-index: 1;
 }
 /*. testKumoCharDiv			menu-input-wrapper			メニューの内容物を覆っているアレ*/
 .menu-input-wrapper{
@@ -231,7 +250,7 @@ textarea:focus {
 	left: 53.7vw;
 	font-size: 1.5vw;
 	line-height: 1.5;
-	z-index: -1;
+	z-index: 2;
 }
 /*. TestSearchAlign			menu-input-margin-left		検索：の左のmargin*/
 .menu-input-margin-left{
@@ -276,7 +295,6 @@ textarea:focus {
 	justify-content: center;
 	text-align: center;
 	margin: -1vw 0;
-	z-index: -3;
 }
 /*. testMaruTopMargin		list-top-margin				最上部用マージン*/
 .list-top-margin{
@@ -339,11 +357,10 @@ textarea:focus {
 	top: 2.5vw;
 	right: 2.5vw;
 	width: 15vw;
-	z-index: -3;
 }
 /*. testArticleIconImg		article-icon-img			アイコン/
 .article-icon-img{
-	width: 100%;
+	width: 15vw !important;
 }
 /*. testArticleName			article-name-char			投稿者名*/
 .article-name-char{
@@ -363,7 +380,7 @@ textarea:focus {
 	width: 20vw;
 	height: 20vw;
 	background: #D43333;
-	z-index: -4;
+	z-index: -1;
 }
 /*. testArticleDiv			article-circle-wrapper		半円を覆う*/
 .article-circle-wrapper{
@@ -381,7 +398,7 @@ textarea:focus {
 	background: #D43333;
 	border-radius: 50% 50% 0 0/100% 100% 0 0;
 	flex-shrink: 0;
-	z-index: -3;
+	z-index: -1;
 }
 /*. testArticleChar			article-wrapper				記事を覆う*/
 .article-wrapper{
@@ -389,7 +406,6 @@ textarea:focus {
 	top: 19vw;
 	left: 0vw;
 	width: 100%;
-	z-index: -3;
 }
 /*. testArticleTitle		article-title-char			タイトル文字*/
 .article-title-char{
@@ -427,8 +443,9 @@ textarea:focus {
 }
 /*. testArticleGoodImg		article-good-img			いいねボタンの画像*/
 .article-good-img{
-	width: 7vw;
-	margin: 7vw;
+	width: 8vw;
+	margin: 4vw;
+	padding: 1vw;
 }
 /*. testCommentTitle		article-big-char			"コメント"の文字*/
 .article-big-char{
@@ -446,7 +463,6 @@ textarea:focus {
 	text-align: center;
 	margin: -0.85vw 0;
 	color: #D43333;
-	z-index: -3;
 }
 /*. testCommentMaruSpan		comment-circle-outer		コメントの丸*/
 .comment-circle-outer{
