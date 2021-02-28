@@ -13,10 +13,18 @@
    version="1.1"
    id="svg8"
    inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   sodipodi:docname="icon0.svg">
+   sodipodi:docname="good.svg">
   <defs
-     id="defs2" />
+     id="defs2">
+    <inkscape:path-effect
+       lpeversion="1"
+       is_visible="true"
+       id="path-effect858"
+       effect="spiro" />
+  </defs>
   <sodipodi:namedview
+     inkscape:snap-center="true"
+     showguides="false"
      fit-margin-bottom="0"
      fit-margin-right="0"
      fit-margin-left="0"
@@ -29,10 +37,10 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="-34.479825"
-     inkscape:cy="114.02257"
+     inkscape:cx="140.8776"
+     inkscape:cy="126.30484"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:pagecheckerboard="true"
@@ -44,7 +52,8 @@
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     borderlayer="true" />
+     borderlayer="true"
+     inkscape:snap-object-midpoints="true" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -53,20 +62,45 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="レイヤー 1"
      inkscape:groupmode="layer"
-     id="layer1">
-    <ellipse
-       ry="26.458332"
-       rx="26.458334"
+     id="layer1"
+     sodipodi:insensitive="true">
+    <circle
        cy="26.458332"
        cx="26.458334"
        id="path830"
-       style="fill:#ffd5d5;stroke:#d6f0e0;stroke-width:0;stroke-miterlimit:3;stroke-dasharray:none;paint-order:stroke markers fill" />
+       style="fill:#fdeadd;fill-opacity:1;stroke:#d43333;stroke-width:1.32292;stroke-miterlimit:3;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+       r="25.796873" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="レイヤー 2">
+    <rect
+       transform="rotate(-45)"
+       y="31.725302"
+       x="-10.182561"
+       height="15.875"
+       width="15.875"
+       id="rect885"
+       style="fill:#d43333;fill-opacity:1;stroke:none;stroke-width:1.19062;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" />
+    <circle
+       r="7.9375"
+       cy="23.812496"
+       cx="20.637495"
+       id="path889"
+       style="fill:#d43333;fill-opacity:1;stroke:none;stroke-width:1.19062;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" />
+    <circle
+       style="fill:#d43333;fill-opacity:1;stroke:none;stroke-width:1.19062;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path889-4"
+       cx="32.279171"
+       cy="23.812496"
+       r="7.9375" />
   </g>
 </svg>

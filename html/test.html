@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html class="background-red top" lang="ja">
+<html id="top background-red" lang="ja">
 <head>
 <meta charset="Shift-JIS">
-<title>test2</title>
+<title>test</title>
 <!-- font -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <!-- CSS -->
@@ -11,9 +11,14 @@
 <!-- JS -->
 <script src="menu.js"></script>
 </head>
+<!-- 改行すると余計な空白が発生する可能性あり -->
 <body>
 
-<div id="post-effect-circle"style="width: 0px; height: 0px; top: 1.05vw; right: 1.6vw;"></div>
+<div class="post-button" onclick="threadMenuClicked()">
+	<div class="post-open-char-A">投稿</div>
+	<div class="post-open-char-B">する</div>
+</div>
+<div id="post-effect-circle" style="width: 0px; height: 0px; top: 1.05vw; right: 1.6vw;"></div>
 <form id="post-wrapper" class="display-none">
 	<div id="post-close-button" class="post-button" onclick="threadMenuClicked()">
 		<div class="post-close-char">閉じる</div>
@@ -35,6 +40,8 @@
 	<div class="post-input-wrapper">
 		名前<br>
 		<textarea class="post-input-textarea-A post-input-textarea" name="name" placeholder="何文字まで" required></textarea>
+		<br>タイトル<br>
+		<textarea class="post-input-textarea-A post-input-textarea" name="title" placeholder="何文字まで" required></textarea>
 		<br>本文<br>
 		<textarea class="post-input-textarea-B post-input-textarea" name="content" placeholder="何文字まで" required></textarea>
 		<br>
@@ -47,101 +54,88 @@
 		<input type="radio" name="icon" value="4">
 	</span>
 </form>
-<div id="post-effect-background" class="display-none"></div>
 
 <span id="content">
-<div class="article-background-hide"></div>
 <svg class="menu-sun-outer" width="494.44" height="191.51" version="1.1" viewBox="0 0 130.82 50.671" xmlns="http://www.w3.org/2000/svg">
-	<a xlink:href="test.html">
+	<a xlink:href="#top">
 		<ellipse cx="57.166" cy="-21.318" rx="56.942" ry="57.382" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
 	</a>
-	<a xlink:href="test.html">
+	<a xlink:href="#top">
 		<circle cx="75.289" cy="44.838" r=".70247" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
 	</a>
-	<a xlink:href="test.html">
+	<a xlink:href="#top">
 		<ellipse cx="63.253" cy="47.349" rx="1.6391" ry="1.6391" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
 	</a>
-	<a xlink:href="test.html">
+	<a xlink:href="#top">
 		<circle cx="86.516" cy="39.672" r="1.6391" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
 	</a>
-	<a xlink:href="test.html">
+	<a xlink:href="#top">
 		<circle cx="47.142" cy="46.81" r="3.1991" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
 	</a>
-	<a xlink:href="test.html">
+	<a xlink:href="#top">
 		<circle cx="98.981" cy="31.755" r="3.1991" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
 	</a>
-	<a xlink:href="test.html">
+	<a xlink:href="#top">
 		<ellipse cx="28.753" cy="42.152" rx="5.6106" ry="5.6106" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
 	</a>
-	<a xlink:href="test.html">
+	<a xlink:href="#top">
 		<circle cx="112.61" cy="19.137" r="5.6106" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
 	</a>
-	<a xlink:href="test.html">
+	<a xlink:href="#top">
 		<circle cx="121.88" cy="2.3456" r="8.283" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
 	</a>
-	<a xlink:href="test.html">
+	<a xlink:href="#top">
 		<circle cx="10.49" cy="31.044" r="8.283" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
 	</a>
-	<a xlink:href="test.html">
+	<a xlink:href="#top">
 		<circle cx="-8.0849" cy="10.891" r="11.958" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
 	</a>
-	<a xlink:href="test.html">
-		<text x="24.134235" y="20.813143" style="fill:#d43333;font-size:10.583px;line-height:1.25;stroke-width:.26458" xml:space="preserve"><tspan x="30.134235" y="15.813143" style="fill:#d43333;font-size:10.583px;stroke-width:.26458">一覧に戻る</tspan></text>
+	<a xlink:href="#top">
+		<text x="24.134235" y="20.813143" style="fill:#d43333;font-size:10.583px;line-height:1.25;stroke-width:.26458" xml:space="preserve"><tspan x="24.134235" y="15.813143" style="fill:#d43333;font-size:10.583px;stroke-width:.26458">トップに戻る</tspan></text>
 	</a>
 </svg>
-<span class="article-icon-wrapper">
-	<img class="article-icon-img" style="width: 15vw" src="icon0.svg">
-	<p class="article-name-char">投稿者名<br>あいう</p>
-</span>
-<div class="article-square"></div>
-<div class="article-circle-wrapper">
-	<span class="article-circle-outer"></span>
+<div class="menu-cloud-outer">
+	<img src="kumo.svg">
 </div>
-<div class="article-wrapper">
-	<p class="article-title-char">タイトル</p>
-	<p class="article-content-char">あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。<br>またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。</p>
-	<div class="article-etc-wrapper">
-		<p class="article-etc-char">投稿ID:888888</p>
-		<p class="article-etc-char">投稿日時:8888/88/88 88:88</p>
-		<p class="article-etc-char">閲覧数:8888</p>
-		<p class="article-etc-char">いいね数:8888</p>
-	</div>
-	<div class="article-good-outer">
-		<img class="article-good-img" src="good.svg">
-	</div>
-	<p class="article-big-char">コメント</p>
-	<div class="comment-circle-wrapper">
-		<span class="comment-circle-outer">
-			<img class="comment-icon-img" src="icon0.svg"><br>
-			<span class="comment-name-char">コメント者名</span>
-			<br>
-			<p class="comment-content-char">コメントの内容</p>
-			<br>
-			<span class="comment-time-char">8888/88/88 88:88</span>
-		</span>
-		<span class="comment-circle-outer"></span>
-		<span class="comment-circle-outer"></span>
-		<span class="comment-circle-outer"></span>
-		<span class="comment-circle-outer"></span>
-	</div>
-		<div class="comment-circle-wrapper">
-		<span class="comment-circle-outer"></span>
-		<span class="comment-circle-outer"></span>
-		<span class="comment-circle-outer"></span>
-		<span class="comment-circle-outer"></span>
-	</div>
-	<div class="comment-circle-wrapper">
-		<span class="comment-circle-outer"></span>
-		<span class="comment-circle-outer"></span>
-		<span class="comment-circle-outer"></span>
-		<span class="comment-circle-outer"></span>
-		<span class="comment-circle-outer comment-post-button">
-			<span class="comment-open-post-button comment-post-button" onclick="responceMenuClicked()">
-				<p>コメント<br>する</p>
-			</span>
-		</span>
-	</div>
-	<div class="bottom-margin"></div>
+<form class="menu-input-wrapper">
+	<span class="menu-input-margin-left"></span>
+	検索：
+	<textarea name="search" placeholder="ここに入力"></textarea>
+	<span class="menu-input-margin-center"></span>
+	<input class="submit-button" type="submit" value="検索">
+	<br>並び替え：
+	<span class="menu-pulldown-arrow">▼</span>
+	<select class="menu-select" name="sort">
+		<option class="menu-pulldown-list" value="view">閲覧数</option>
+		<option class="menu-pulldown-list" value="good">いいね数</option>
+	</select>
+</form>
+<div class="list-circle-wrapper list-top-margin">
+	<a href="#top" class="list-circle-outer">
+		<img class="list-icon-img" src="icon0.svg">
+		<br>
+		<span class="list-title-char">スレッドタイトル</span>
+		<br>
+		<div class="list-name-char">投稿者:虹猫</div>
+		<br>
+		<span class="list-etc-char">表示回数:8888<br>コメント数:8888<br>いいね数:8888</span>
+		<br>
+		<span class="list-time-char">8888/88/88</span>
+	</a>
+	<a href="#top" class="list-circle-outer">002</a>
+	<a href="#top" class="list-circle-outer">003</a>
 </div>
+<div class="list-circle-wrapper">
+	<a href="#top" class="list-circle-outer">004</a>
+	<a href="#top" class="list-circle-outer">005</a>
+	<a href="#top" class="list-circle-outer">006</a>
+	<a href="#top" class="list-circle-outer">007</a>
+</div>
+<div class="list-circle-wrapper">
+	<a href="#top" class="list-circle-outer">008</a>
+	<a href="#top" class="list-circle-outer">009</a>
+	<a href="#top" class="list-circle-outer">010</a>
+</div>
+<div class="bottom-margin"></div>
 </span>
 </html>
