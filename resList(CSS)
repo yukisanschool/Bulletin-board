@@ -1,0 +1,117 @@
+<%@ page pageEncoding="Windows-31J"
+	contentType="text/html;charset=Windows-31J" %>
+
+<%--JSTL 1.1.2 core タグライブラリ--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<html class="background-red top" lang="ja">
+	<head>
+	<meta charset="Shift-JIS">
+	<title>掲示板</title>
+	<!-- font -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+	<link href="css/style.css" rel="stylesheet">
+	<!-- JS -->
+	<script src="menu.js"></script>
+	<!--アイコン-->
+	<link rel="icon" type="image/png" href="image/favicon.png">
+	</head>
+	<body>
+	
+	<div id="post-effect-circle"style="width: 0px; height: 0px; top: 1.05vw; right: 1.6vw;"></div>
+<form method="POST" action="ResponceServlet?id=${tid}" id="post-wrapper" class="display-none opacity-zero">
+	<div id="post-close-button" class="post-button" onclick="threadMenuClicked()">
+		<div class="post-close-char">閉じる</div>
+	</div>
+	<div class="post-icon-wrapper">
+		<div class="post-icon-outer">
+			<img class="post-icon-img" src="image/icon1.svg" onclick="selectIcon(1)">
+		</div>
+		<div class="post-icon-outer">
+			<img class="post-icon-img" src="image/icon2.svg" onclick="selectIcon(2)">
+		</div>
+		<div class="post-icon-outer">
+			<img class="post-icon-img" src="image/icon3.svg" onclick="selectIcon(3)">
+		</div>
+		<div class="post-icon-outer">
+			<img class="post-icon-img" src="image/icon4.svg" onclick="selectIcon(4)">
+		</div>
+	</div>
+	<div class="post-input-wrapper">
+		名前<br>
+		<textarea class="post-input-textarea-A post-input-textarea" name="user_name" placeholder="10文字まで" maxlength="10" required></textarea>
+		<br>本文<br>
+		<textarea class="post-input-textarea-B post-input-textarea" name="contents" placeholder="250文字まで" maxlength="250" required></textarea>
+		<br>
+		<input class="submit-button post-submit-button" type="submit" name="btn1" value="投稿">
+	</div>
+	<span class="display-none">
+		<input type="radio" name="icon" value="1" checked>
+		<input type="radio" name="icon" value="2">
+		<input type="radio" name="icon" value="3">
+		<input type="radio" name="icon" value="4">
+	</span>
+</form>
+<div id="post-effect-background" class="display-none"></div>
+
+<span id="content">
+<div class="article-background-hide"></div>
+<div class="menu-sun-outer">
+	<a href="http://localhost:8080/myapps/threadservlet">
+		<img src="image/sun.svg">
+	</a>
+</div>
+<span class="article-icon-wrapper">
+	<c:forEach var="_rlist" items="${rlist}">
+		<img class="article-icon-img" style="width: 15vw"  src="image/icon${_rlist.th_icon}.svg">
+		<p class="article-name-char">投稿者名<br>${_rlist.th_name}</p>
+</span>
+<div class="article-square"></div>
+<div class="article-circle-wrapper">
+	<span class="article-circle-outer"></span>
+</div>
+<div class="article-wrapper">
+	<p class="article-title-char">${_rlist.th_title}</p>
+	<p class="article-content-char">${_rlist.th_description}</p>
+	<div class="article-etc-wrapper">
+		<p class="article-etc-char">投稿ID:${_rlist.th_id}</p>
+		<p class="article-etc-char">投稿日時:${_rlist.th_date}</p>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	</c:forEach>
+	<span class="article-big-char">
+		<div class="comment-circle-wrapper">
+			<span class="comment-open-post-button comment-post-button" onclick="responceMenuClicked()">
+				<p>コメント<br>する</p>
+			</span>
+		</div>
+	</span>
+	<br>
+	<br>
+	<br>
+	<p class="article-big-char">コメント</p>
+	<c:forEach var="_list" items="${list}">
+		${_list.count %9 == 1 ? "<div class=\"comment-circle-wrapper\">" : 
+		(_list.count %9 == 6 ? "<div class=\"comment-circle-wrapper\">" : "<div></div>")}
+			<span class="comment-circle-outer">
+				<img class="comment-icon-img" src="image/icon${_list.res_icon}.svg"><br>
+				<span class="comment-name-char">${_list.res_name}</span>
+				<br>
+				<p class="comment-content-char">${_list.res_text}</p>
+				<br>
+				<span class="comment-time-char">${_list.res_date}</span>
+			</span>
+		${_list.count %9==0 ? "</div>" : 
+			(_list.count %9==5 ? "</div>" : "<a hidden>非表示用</a>")}
+			<!--${_listcount % 9 != 5 or count % 9 != 5 ? "</div>" : "<div></div>"}-->
+	</c:forEach>
+	<div class="bottom-margin"></div>
+</div>
+</body>
+</html>
