@@ -202,7 +202,7 @@ public class DBAccess{
 			
         	int th_id=Integer.parseInt(tid);
         	
-			String sql=" SELECT res_id, res_name, res_icon, res_text, res_good, TO_CHAR(res_date, 'YYYY-MM-DD HH24:MI') FROM t10_board_res WHERE th_id="+th_id+"ORDER BY res_id";
+			String sql=" SELECT res_id, res_name, res_icon, res_text, res_good, TO_CHAR(res_date, 'YYYY-MM-DD HH24:MI'), ROW_NUMBER() OVER(ORDER BY res_id ASC) count FROM t10_board_res WHERE th_id="+th_id+"ORDER BY res_id";
 
 			//Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
@@ -227,6 +227,9 @@ public class DBAccess{
 				int good=_good.intValue();
 				r.setRes_good(good);
 				r.setRes_date(rs.getString(6));
+				BigDecimal _count =rs.getBigDecimal(7);
+				int count=_count.intValue();
+				r.setCount(count);
 				list.add(r);
 			}
 			
