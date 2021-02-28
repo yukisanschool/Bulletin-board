@@ -1,0 +1,518 @@
+@charset "Shift-JIS";
+@font-face {
+	font-family: "Mamelon-3.5HiRegular";
+	src: url("./Mamelon-3.5HiRegular.woff2") format("woff2");
+}
+
+/*共通部分
+----------------------------------------------------------*/
+html {
+	font-size: 62.5%;
+	background: #FDEADD;;
+}
+body {
+	font-family: 'Mamelon-3.5HiRegular', "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+	line-height: 100%;
+	color: #FDEADD;
+}
+a {
+	text-decoration: none;
+}
+a:link{
+  color: #FDEADD;
+}
+a:visited{
+  color: #FDEADD;
+}
+a:hover{
+  color: #FDEADD;
+}
+a:active{
+  color: #FDEADD;
+}
+select::-ms-expand {
+	display: none;
+}
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+img {
+	max-width: 100%;
+}
+textarea{
+	border: 2px solid #B63333;  /* 枠線 */
+	border-radius: 0.67em;   /* 角丸 */
+	padding: 0.45vw 0.3vw 0.15vw 0.3vw;          /* 内側の余白量 */
+	background-color: #B63333;  /* 背景色 */
+	width: 20vw;             /* 横幅 */
+	height: 2vw;           /* 高さ */
+	font-size: 1vw;          /* 文字サイズ */
+	line-height: 1;
+	resize: none;
+	color: #FDEADD;
+}
+textarea:focus {
+    border-color: #FDEADD;   /* 枠線の色 */
+    background-color: #FDEADD;  /* 背景色 */
+    color: #B63333;
+    outline: none;           /* ※ブラウザが標準で付加する線を消したいとき */
+}
+
+/*javascript用
+----------------------------------------------------------*/
+/* 透明化 */
+.opacity-zero{
+    opacity: 0 !important;
+}
+/* 非表示 */
+.display-none{
+    display: none !important;
+}
+/*クリックイベント無効*/
+.pointer-events-none{
+	pointer-events: none
+}
+/*投稿メニュー
+----------------------------------------------------------*/
+/*# testMenuOpen			post-open-button	"投稿する"ボタン*/
+/*. testMenuDiv				post-button			"投稿する"と"閉じる"ボタンの書式*/
+.post-button{
+	position: fixed;
+	top: 1.05vw;
+	right: 1.6vw;
+	width: 6vw;
+	height: 6vw;
+	background: #FDEADD;
+	border-radius: 50%;
+	z-index: 2;
+	line-height: 1.1;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: #D43333;
+	cursor: pointer;
+}
+/*. testMenuOpenCharC		post-close-char		閉じるボタンの文字*/
+.post-close-char{
+	font-size: 1.5vw;
+}
+/*# testMenuHide			post-effect-circle	開閉時に拡大・縮小される円*/
+#post-effect-circle{
+	position:fixed;
+	background: #D43333;
+	width: 0px;
+	height: 0px;
+	border-radius: 50%;
+	z-index: 5;
+	transition: all 0.3s;
+}
+/*												穴をあけるつもりだった*/
+.effect-donut{
+	background: radial-gradient(circle, transparent 0%, transparent 98%, #D43333 99%, #D43333 100%) !important;
+}
+/*# Menu					post-wrapper		投稿メニューを覆っているアレ*/
+#post-wrapper{
+	transition: 0.3s;
+}
+/*# testMenuClose			post-close-button	閉じるボタン*/
+#post-close-button{
+	z-index: 4;
+}
+/*. testIconSet				post-icon-wrapper	アイコン選択ボタンを覆っているアレ*/
+.post-icon-wrapper{
+	line-height: 0;
+	display: flex;
+	position: fixed;
+	flex-direction: column;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+  background: -moz-linear-gradient(left, #D73F3E, #D43333 60%);
+  background: -webkit-linear-gradient(left, #D73F3E, #D43333 60%);
+  background: linear-gradient(to right, #D73F3E, #D43333 60%);
+  z-index: 3;
+}
+/*. testIconSetDiv			post-icon-outer		アイコン選択ボタンの幅*/
+.post-icon-outer{
+	width: 25vh;
+}
+/*. testIconSetImg			post-icon-img		アイコン選択ボタンの画像*/
+.post-icon-img{
+	width: 25vh;
+	padding: 2.5vh;
+	cursor: pointer;
+}
+.post-icon-img:hover{
+	background: rgba(255, 255, 255, 0.2);
+	transition: 0.3s;
+}
+.post-icon-effect{
+	background: rgba(255, 255, 255, 0.3) !important;
+}
+/*. testToukouMenu			post-input-wrapper	テキストボックスを覆っているアレ*/
+.post-input-wrapper{
+	position: fixed;
+	height: 100vh;
+	
+  top: 25vh;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 60%;
+	
+	font-size: 3.5vh;
+	line-height: 1.4;
+	z-index: 3;
+}
+/*. testTextNyuuryokuA		post-input-textarea-A	テキストボックスの高さが短い方*/
+.post-input-textarea-A{
+	height: 5vh !important;
+	z-index: 3;
+}
+/*. testTextNyuuryokuB		post-input-textarea-B	テキストボックスの高さが長い方*/
+.post-input-textarea-B{
+	height: 40vh !important;
+	z-index: 3;
+}
+/*. testTextarea			post-input-textarea		メニューのテキストボックス全般の書式*/
+.post-input-textarea{
+	font-size: 2.5vh;
+	line-height: 1.2;
+	width: 100%;
+	height: 100%;
+	padding: 1vh 1vh 0.3vh 1vh;
+	margin: 0.5vh 0 1vh 0;
+}
+/*. testSubmitButton		submit-button			ボタン全般の書式*/
+.submit-button{
+	vertical-align: middle;
+	border: 2px solid #FDEADD;  /* 枠線 */
+	border-radius: 0.67em;   /* 角丸 */
+	padding: 0.3vw;          /* 内側の余白量 */
+	margin-bottom: 4px;
+	background-color: #FDEADD;  /* 背景色 */
+	width: 5vw;             /* 横幅 */
+	height: 2vw;           /* 高さ */
+	font-size: 1vw;          /* 文字サイズ */
+	line-height: 1;
+    outline: none;           /* ※ブラウザが標準で付加する線を消したいとき? */
+    color: #D43333;
+}
+/*testKakuteiButton			post-submit-button		メニューのボタンの書式*/
+.post-submit-button{
+	position: fixed;
+	margin: 2.5vh calc(30vw - 5vw / 2 + 2px);
+}
+/*# bg						post-effect-background	追加背景*/
+#post-effect-background{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	background: #FDEADD;
+	z-index: -5;
+}
+/*一覧ページ
+----------------------------------------------------------*/
+/*# top						top						最上段に飛ぶためのやつ*/
+/*. testSunDiv				menu-sun-outer			メニューの太陽の書式*/
+.menu-sun-outer{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 27vw;
+	z-index: 1;
+	border-style:none;
+}
+.menu-sun-outer tspan:hover{
+	fill: #FDEADD !important;
+	transition: 0.3s;
+}
+/*. testKumoDiv				menu-cloud-outer			メニューの雲の書式*/
+.menu-cloud-outer{
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 59vw;
+	pointer-events: none;
+	z-index: 1;
+}
+/*. testKumoCharDiv			menu-input-wrapper			メニューの内容物を覆っているアレ*/
+.menu-input-wrapper{
+	position: fixed;
+	top: 1.7vw;
+	left: 53.7vw;
+	font-size: 1.5vw;
+	line-height: 1.5;
+	z-index: 2;
+}
+/*. TestSearchAlign			menu-input-margin-left		検索：の左のmargin*/
+.menu-input-margin-left{
+	margin-left: 3vw;
+}
+/*. TestsearchMargin		menu-input-margin-center	検索：の右のmargin*/
+.menu-input-margin-center{
+	margin: 0.2vw;
+}
+/*. testSankaku				menu-pulldown-arrow			プルダウンメニューの▼*/
+.menu-pulldown-arrow{
+	margin-left: 7vw;
+}
+/*. testSelect				menu-select					プルダウンメニュー*/
+.menu-select{
+	margin-left: -9vw;
+	width: 9vw;
+	outline: none;
+	cursor: pointer;
+	color: #FDEADD;
+}
+/*. testSelectKoumoku		menu-pulldown-list			プルダウンメニューのリスト*/
+.menu-pulldown-list{
+	background: #D43333;
+	border: none;
+	color: #FDEADD;
+}
+/*. testMenuOpenCharA		post-open-char-A			投稿するボタンの文字(大)*/
+.post-open-char-A{
+	width: 100%;
+	font-size: 1.5vw;
+}
+/*. testMenuOpenCharB		post-open-char-B			投稿するボタンの文字(小)*/
+.post-open-char-B{
+	width:100%;
+	font-size: 1vw;
+}
+/*. testMaruDiv				list-circle-wrapper			一覧の円*/
+.list-circle-wrapper{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	margin: -1vw 0;
+}
+/*. testMaruTopMargin		list-top-margin				最上部用マージン*/
+.list-top-margin{
+	margin-top: 15vw;
+}
+/*.testMaruSpan				list-circle-outer			円そのもの*/
+.list-circle-outer{
+	height: 22vw;
+	width: 22vw;
+	margin: 0 1vw;
+	background: #D43333;
+	border-radius: 50%;
+}
+/*. testIconImg				list-icon-img				アイコン*/
+.list-icon-img{
+	width: 8vw;
+	margin: 1.3vw 0 -0.3vw 0;
+}
+/*. testTitleChar			list-title-char				タイトルの文字*/
+.list-title-char{
+	font-size: 2.0vw;								/*表示の関係上いじった元々は2.5vw*/
+	line-height: 1.9;
+	margin-top: -0.5vw;
+}
+/*.testEtcName				list-name-char				投稿者名の文字*/
+.list-name-char{
+	font-size: 1.2vw;
+	line-height: 0;
+	margin: 0.2vw 0 0.7vw 0;
+}
+/*.testEtcChar				list-etc-char				その他の情報の文字*/
+.list-etc-char{
+	font-size: 1vw;
+	line-height: 1.2;
+}
+/*.testTimeChar				list-time-char				投稿日の文字*/
+.list-time-char{
+	font-size: 0.8vw;
+	line-height: 3;
+}
+/*.testUnderPadding			bottom-margin				最下部用マージン*/
+.bottom-margin{
+	margin: 5vw;
+}
+/*詳細ページarticle
+----------------------------------------------------------*/
+/*. testBackgroundHide		article-background-hide		上部隠し*/
+.article-background-hide{
+	position: absolute;
+	top: 0vw;
+	left: 0vw;
+	width: 100%;
+	height: 70vw;
+	background: #FDEADD;
+	z-index: -5;
+}
+/*. testArticleImg			article-icon-wrapper		アイコンと投稿者名を覆う*/
+.article-icon-wrapper{
+	position: absolute;
+	top: 2.5vw;
+	right: 2.5vw;
+	width: 15vw;
+}
+/*. testArticleIconImg		article-icon-img			アイコン/
+.article-icon-img{
+	width: 15vw !important;
+}
+/*. testArticleName			article-name-char			投稿者名*/
+.article-name-char{
+	text-align: center;
+	margin-top: 0.8vw;
+	width: 15vw;
+	line-height: 1.2;
+	font-size: 0.75vw;
+	color: #D43333;
+	word-break: break-all;
+}
+/*. testSquareDiv			article-square				吹き出しのとんがり*/
+.article-square{
+	position: absolute;
+	top: 17.5vw;
+	right: 17.5vw;
+	width: 20vw;
+	height: 20vw;
+	background: #D43333;
+	z-index: -1;
+}
+/*. testArticleDiv			article-circle-wrapper		半円を覆う*/
+.article-circle-wrapper{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	margin-top: 10vw;
+	overflow: hidden;
+}
+/*. testArticleSpan			article-circle-outer		半円そのもの*/
+.article-circle-outer{
+	height: 60vw;
+	width: 120vw;
+	background: #D43333;
+	border-radius: 50% 50% 0 0/100% 100% 0 0;
+	flex-shrink: 0;
+	z-index: -1;
+}
+/*. testArticleChar			article-wrapper				記事を覆う*/
+.article-wrapper{
+	position: absolute;
+	top: 19vw;
+	left: 0vw;
+	width: 100%;
+}
+/*. testArticleTitle		article-title-char			タイトル文字*/
+.article-title-char{
+	text-align: center;
+	word-break: break-all;
+	font-size: 2.5vw;
+	line-height: 1.4;
+	margin: 0 25% 0 25%;
+}
+/*. testArticleText			article-content-char		記事本文*/
+.article-content-char{
+	word-break: break-all;
+	font-size: 1.5vw;
+	line-height: 1.3;
+	margin: 2.5vw 20% 0 20%;
+}
+/*. testArticleData			article-etc-wrapper			その他の情報を覆う*/
+.article-etc-wrapper{
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	margin-top: 2vw;
+}
+/*. testArticleDataP		article-etc-char			その他の情報の文字*/
+.article-etc-char{
+	font-size: 0.75vw;
+	margin: 0.5vw;
+}
+/*. testArticleGoodDiv		article-good-outer			いいねボタンを覆う*/
+.article-good-outer{
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	margin-top: 2.5vw;
+}
+/*. testArticleGoodImg		article-good-img			いいねボタンの画像*/
+.article-good-img{
+	width: 8vw;
+	margin: 4vw;
+	padding: 1vw;
+}
+/*. testCommentTitle		article-big-char			"コメント"の文字*/
+.article-big-char{
+	text-align: center;
+	word-break: break-all;
+	font-size: 2vw;
+	line-height: 1.4;
+	margin: 2.5vw 20% 4vw 20%;
+}
+/*. testCommentMaruDiv		comment-circle-wrapper		コメントの丸を覆う*/
+.comment-circle-wrapper{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	margin: -0.85vw 0;
+	color: #D43333;
+}
+/*. testCommentMaruSpan		comment-circle-outer		コメントの丸*/
+.comment-circle-outer{
+	height: 17vw;
+	width: 17vw;
+	margin: 0 1vw;
+	background: #FDEADD;
+	border-radius: 50%;
+}
+/*. testDoComment			comment-post-button			コメントするボタン*/
+.comment-post-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #D43333;
+}
+/*. testDoCommentMaru		comment-open-post-button	コメントするボタン(実体)*/
+.comment-open-post-button{
+	font-size: 1.5vw;
+	line-height: 1.2;
+	height: 9vw;
+	width: 9vw;
+	background: #FDEADD;
+	border-radius: 50%;
+}
+/*. testCommentIcon			comment-icon-img			コメントのアイコン*/
+.comment-icon-img{
+	width: 6.182vw;
+	margin: 1.3vw 0 0vw 0;
+}
+/*. testCommentName			comment-name-char			コメントの投稿者名*/
+.comment-name-char{
+	font-size: 0.75vw;
+	line-height: 2;
+}
+/*. testCommentText			comment-content-char		コメントの内容*/
+.comment-content-char{
+	display:inline-block;
+	width: 13vw;
+	height: 3.5vw;
+	font-size: 1vw;
+	margin: -0.1vw auto 2.5vw auto;
+	line-height: 1.4;
+	word-break: break-all;
+}
+/*. testCommentTime			comment-time-char			コメント時間の文字*/
+.comment-time-char{
+	font-size: 0.6vw;
+}
+/*. background-B			background-red				背景赤*/
+.background-red{
+	background: #D43333 !important;
+}
