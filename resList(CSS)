@@ -21,22 +21,22 @@
 	<body>
 	
 	<div id="post-effect-circle"style="width: 0px; height: 0px; top: 1.05vw; right: 1.6vw;"></div>
-<form method="POST" action="ResponceServlet?id=${tid}&co=0" id="post-wrapper" class="display-none opacity-zero">
+<form method="POST" action="ResponceServlet?id=${tid}&co=0" id="post-wrapper" class="display-none">
 	<div id="post-close-button" class="post-button" onclick="threadMenuClicked()">
 		<div class="post-close-char">閉じる</div>
 	</div>
 	<div class="post-icon-wrapper">
 		<div class="post-icon-outer">
-			<img class="post-icon-img" src="image/icon1.svg" onclick="selectIcon(1)">
+			<img id="post-icon-0" class="post-icon-img post-icon-effect" src="image/icon1.svg" onclick="selectIcon(1)">
 		</div>
 		<div class="post-icon-outer">
-			<img class="post-icon-img" src="image/icon2.svg" onclick="selectIcon(2)">
+			<img id="post-icon-1" class="post-icon-img" src="image/icon2.svg" onclick="selectIcon(2)">
 		</div>
 		<div class="post-icon-outer">
-			<img class="post-icon-img" src="image/icon3.svg" onclick="selectIcon(3)">
+			<img id="post-icon-2" class="post-icon-img" src="image/icon3.svg" onclick="selectIcon(3)">
 		</div>
 		<div class="post-icon-outer">
-			<img class="post-icon-img" src="image/icon4.svg" onclick="selectIcon(4)">
+			<img id="post-icon-3" class="post-icon-img" src="image/icon4.svg" onclick="selectIcon(4)">
 		</div>
 	</div>
 	<div class="post-input-wrapper">
@@ -58,11 +58,46 @@
 
 <span id="content">
 <div class="article-background-hide"></div>
-<div class="menu-sun-outer">
-	<a href="http://localhost:8080/myapps/threadservlet">
-		<img src="image/sun.svg">
+<svg class="menu-sun-outer" width="494.44" height="191.51" version="1.1" viewBox="0 0 130.82 50.671" xmlns="http://www.w3.org/2000/svg">
+	<a xlink:href="threadservlet">
+		<ellipse cx="57.166" cy="-21.318" rx="56.942" ry="57.382" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
 	</a>
-</div>
+	<a xlink:href="threadservlet">
+		<circle cx="75.289" cy="44.838" r=".70247" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+	</a>
+	<a xlink:href="threadservlet">
+		<ellipse cx="63.253" cy="47.349" rx="1.6391" ry="1.6391" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+	</a>
+	<a xlink:href="threadservlet">
+		<circle cx="86.516" cy="39.672" r="1.6391" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+	</a>
+	<a xlink:href="threadservlet">
+		<circle cx="47.142" cy="46.81" r="3.1991" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+	</a>
+	<a xlink:href="threadservlet">
+		<circle cx="98.981" cy="31.755" r="3.1991" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+	</a>
+	<a xlink:href="threadservlet">
+		<ellipse cx="28.753" cy="42.152" rx="5.6106" ry="5.6106" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+	</a>
+	<a xlink:href="threadservlet">
+		<circle cx="112.61" cy="19.137" r="5.6106" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+	</a>
+	<a xlink:href="threadservlet">
+		<circle cx="121.88" cy="2.3456" r="8.283" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+	</a>
+	<a xlink:href="threadservlet">
+		<circle cx="10.49" cy="31.044" r="8.283" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+	</a>
+	<a xlink:href="threadservlet">
+		<circle cx="-8.0849" cy="10.891" r="11.958" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+	</a>
+	<a xlink:href="threadservlet">
+		<text x="24.134235" y="20.813143" style="fill:#d43333;font-size:10.583px;line-height:1.25;stroke-width:.26458" xml:space="preserve"><tspan x="30.134235" y="15.813143" style="fill:#d43333;font-size:10.583px;stroke-width:.26458">一覧に戻る</tspan></text>
+	</a>
+</svg>
+
+<form method="GET" action="ResponceServlet?id=${tid}&co=0">
 <span class="article-icon-wrapper">
 	<c:forEach var="_rlist" items="${rlist}">
 		<img class="article-icon-img" style="width: 15vw"  src="image/icon${_rlist.th_icon}.svg">
@@ -113,5 +148,6 @@
 	</c:forEach>
 	<div class="bottom-margin"></div>
 </div>
+</form>
 </body>
 </html>
