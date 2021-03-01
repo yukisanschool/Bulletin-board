@@ -75,7 +75,7 @@
 			${_list.count==1 ? "<div class=\"list-circle-wrapper list-top-margin\">" : 
 			(_list.count %7==1 ? "<div class=\"list-circle-wrapper\">" : 
 			(_list.count %7==4 ? "<div class=\"list-circle-wrapper\">" : "<div></div>"))}
-		<a href="ResponceServlet?id=${_list.th_id}" class="list-circle-outer">
+		<a href="ResponceServlet?id=${_list.th_id}&co=1" class="list-circle-outer">
 			<img class="list-icon-img" src="image/icon${_list.th_icon}.svg">
 			<br>
 			<span class="list-title-char">${_list.th_title}</span>
