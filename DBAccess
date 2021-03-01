@@ -139,6 +139,63 @@ public class DBAccess{
 		}
 		return list;
     }
+	public ArrayList<ThreadData> searchTh(String mes, ArrayList<ThreadData> list){
+	try{
+        	Class.forName("oracle.jdbc.driver.OracleDriver");
+        	
+            //Oracleに接続する
+			Connection cn=
+				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
+		
+			String sql=" SELECT th_id, th_icon, th_name, th_title, th_description, TO_CHAR(th_date, 'YYYY-MM-DD HH24:MI'), th_good, th_view, ROW_NUMBER() OVER(ORDER BY th_id ASC) count FROM t10_board_thread WHERE th_title LIKE '%"+mes+"%' ORDER BY th_id";
+			
+			//Statementインターフェイスを実装するクラスをインスタンス化する
+			Statement st=cn.createStatement();
+
+			//select文を実行し
+			//ResultSetインターフェイスを実装したクラスの
+			//インスタンスが返る
+			ResultSet rs=st.executeQuery(sql);
+			list.clear();
+			while (rs.next()) {
+				ThreadData td = new ThreadData();
+				//データを取得する
+				BigDecimal _id =rs.getBigDecimal(1);
+				int id=_id.intValue();
+				td.setTh_id(id);
+				BigDecimal _icon =rs.getBigDecimal(2);
+				int icon=_icon.intValue();
+				td.setTh_icon(icon);
+				td.setTh_name(rs.getString(3));
+				td.setTh_title(rs.getString(4));
+				td.setTh_description(rs.getString(5));
+				td.setTh_date(rs.getString(6));
+				BigDecimal _good =rs.getBigDecimal(7);
+				int good=_good.intValue();
+				td.setTh_good(good);
+				BigDecimal _view =rs.getBigDecimal(8);
+				int view=_view.intValue();
+				td.setTh_view(view);
+				BigDecimal _count =rs.getBigDecimal(9);
+				int count=_count.intValue();
+				td.setCount(count);
+				list.add(td);
+			}
+			
+            
+            //Oracleから切断する
+            cn.close();
+        }catch(ClassNotFoundException e){
+			e.printStackTrace();
+			System.out.println("クラスがないみたい。");
+		}catch(SQLException e){
+			e.printStackTrace();
+			System.out.println("SQL関連の例外みたい。");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return list;
+    }
 	
 	public ArrayList<ThreadData> selectThid(int tid, ArrayList<ThreadData> list){
 	try{
