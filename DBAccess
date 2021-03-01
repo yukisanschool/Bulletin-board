@@ -90,7 +90,7 @@ public class DBAccess{
 			Connection cn=
 				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
 			//わざと昇順にしている
-			String sql=" SELECT th_id, th_icon, th_name, th_title, th_description, TO_CHAR(th_date, 'YYYY-MM-DD HH24:MI'), th_good, th_view FROM t10_board_thread ORDER BY th_id";
+			String sql=" SELECT th_id, th_icon, th_name, th_title, th_description, TO_CHAR(th_date, 'YYYY-MM-DD HH24:MI'), th_good, th_view, ROW_NUMBER() OVER(ORDER BY th_id ASC) count FROM t10_board_thread ORDER BY th_id";
 			
 			//Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
@@ -119,6 +119,9 @@ public class DBAccess{
 				BigDecimal _view =rs.getBigDecimal(8);
 				int view=_view.intValue();
 				td.setTh_view(view);
+				BigDecimal _count =rs.getBigDecimal(9);
+				int count=_count.intValue();
+				td.setCount(count);
 				list.add(td);
 			}
 			
