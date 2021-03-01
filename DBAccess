@@ -250,5 +250,54 @@ public class DBAccess{
 		}
 		return list;
     }
+    
+    public void updateTh(String tid){
+		        try{
+        	Class.forName("oracle.jdbc.driver.OracleDriver");
+        //Oracleに接続する
+			Connection cn=
+				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
+            
+        	int th_id=Integer.parseInt(tid);
+        	
+			String sql=" SELECT th_view FROM t10_board_thread WHERE th_id="+th_id;
+
+			//Statementインターフェイスを実装するクラスをインスタンス化する
+			Statement st=cn.createStatement();
+
+			//select文を実行し
+			//ResultSetインターフェイスを実装したクラスの
+			//インスタンスが返る
+			ResultSet rs=st.executeQuery(sql);
+			//データを取得する
+			rs.next();
+			BigDecimal _co =rs.getBigDecimal(1);
+			int co=_co.intValue();
+			co+=1;
+			
+            String sql2="UPDATE t10_board_thread SET th_view="+co+" WHERE th_id="+th_id;
+
+			Statement st2=cn.createStatement();
+
+            //insert文を実行し
+			//ResultSetインターフェイスを実装したクラスの
+			//インスタンスが返る
+			int in=st2.executeUpdate(sql2);
+
+            //Oracleから切断する
+            cn.close();
+        }
+    	catch(ClassNotFoundException e){
+			e.printStackTrace();
+			System.out.println("クラスがないみたい。");
+		}
+    	catch(SQLException e){
+			e.printStackTrace();
+			System.out.println("SQL関連の例外みたい。");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+    }
+
 }
 
