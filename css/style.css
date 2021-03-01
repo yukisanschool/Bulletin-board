@@ -42,10 +42,10 @@ img {
 	max-width: 100%;
 }
 textarea{
-	border: 2px solid #B63333;  /* 枠線 */
+	border: 2px solid #f7cec3;  /* 枠線 */
 	border-radius: 0.67em;   /* 角丸 */
 	padding: 0.45vw 0.3vw 0.15vw 0.3vw;          /* 内側の余白量 */
-	background-color: #B63333;  /* 背景色 */
+	background-color: #f7cec3;  /* 背景色 */
 	width: 20vw;             /* 横幅 */
 	height: 2vw;           /* 高さ */
 	font-size: 1vw;          /* 文字サイズ */
