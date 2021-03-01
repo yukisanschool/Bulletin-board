@@ -72,9 +72,9 @@
 	<img src="image/kumo.svg">
 </div>
 	<c:forEach var="_list" items="${thlist}">
-			${_list.th_id==1 ? "<div class=\"list-circle-wrapper list-top-margin\">" : 
-			(_list.th_id %7==1 ? "<div class=\"list-circle-wrapper\">" : 
-			(_list.th_id %7==4 ? "<div class=\"list-circle-wrapper\">" : "<div></div>"))}
+			${_list.count==1 ? "<div class=\"list-circle-wrapper list-top-margin\">" : 
+			(_list.count %7==1 ? "<div class=\"list-circle-wrapper\">" : 
+			(_list.count %7==4 ? "<div class=\"list-circle-wrapper\">" : "<div></div>"))}
 		<a href="ResponceServlet?id=${_list.th_id}" class="list-circle-outer">
 			<img class="list-icon-img" src="image/icon${_list.th_icon}.svg">
 			<br>
@@ -87,8 +87,8 @@
 			<br>
 			<span class="list-time-char">${_list.th_date}</span>
 		</a>
-			${_list.th_id %7==0 ? "</div>" : 
-			(_list.th_id %7==3 ? "</div>" : "<a hidden>非表示用</a>")}
+			${_list.count %7==0 ? "</div>" : 
+			(_list.count %7==3 ? "</div>" : "<a hidden>非表示用</a>")}
 	</c:forEach>
 	</div><!--きりがいい数字とは限らないので入れてある-->
 <div class="bottom-margin"></div>
