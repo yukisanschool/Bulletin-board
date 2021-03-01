@@ -13,7 +13,7 @@
 	
 	function responceMenuClicked(){
 		positionTop = window.innerHeight / 2 + "px";
-		ositionRight = window.innerWidth / 2 + "px";
+		positionRight = window.innerWidth / 2 + "px";
 		openAndClose();
 	}
 	
@@ -29,38 +29,45 @@
 			document.getElementById("post-effect-circle").style.height = windowSize * 3 + "px";
 			document.getElementById("post-effect-circle").style.top = windowSize * -1.5 + "px";
 			document.getElementById("post-effect-circle").style.right = windowSize * -1.5 + "px";
-			document.getElementById("post-wrapper").classList.remove('display-none');
 			
 			setTimeout(function(){
-				document.getElementById("content").classList.add('display-none');
-				document.getElementById("post-wrapper").classList.remove('opacity-zero');
-				document.getElementById("post-effect-circle").classList.add('opacity-zero');
-				
+				document.getElementById("content").classList.add('pointer-events-none');
+				document.getElementById("post-wrapper").classList.remove('display-none');
+				document.getElementById("post-effect-circle").classList.add('effect-donut');
 			}, 300);
 			
 			setTimeout(function(){
 				document.getElementById("post-effect-circle").classList.add('display-none');
-			}, 600);
+			},600);
 		}else{
-			document.getElementById("post-wrapper").classList.add('opacity-zero');
+			
+			document.getElementById("post-effect-circle").classList.remove('display-none');
+			
+			setTimeout(function(){
+				document.getElementById("post-effect-circle").classList.remove('effect-donut');
+			},10);
 			
 			setTimeout(function(){
 				document.getElementById("post-wrapper").classList.add('display-none');
-				document.getElementById("post-effect-circle").classList.remove('opacity-zero');
-				document.getElementById("post-effect-circle").classList.remove('display-none');
-			}, 300);
-			setTimeout(function(){
-				document.getElementById("content").classList.remove('display-none');
 				document.getElementById("post-effect-circle").style.width = "0px";
 				document.getElementById("post-effect-circle").style.height = "0px";
 				document.getElementById("post-effect-circle").style.top = positionTop;
 				document.getElementById("post-effect-circle").style.right = positionRight;
-			}, 600);
+				document.getElementById("content").classList.remove('pointer-events-none');
+			}, 300);
 		}
 	}
 	
-	function selectIcon(a){
+	function selectIcon(num){
 		var element = document.getElementById("post-wrapper");
 		var elements = element.icon;
-		elements[a - 1].checked = true;
+		elements[num - 1].checked = true;
+		
+		document.getElementById("post-icon-0").classList.remove('post-icon-effect');
+		document.getElementById("post-icon-1").classList.remove('post-icon-effect');
+		document.getElementById("post-icon-2").classList.remove('post-icon-effect');
+		document.getElementById("post-icon-3").classList.remove('post-icon-effect');
+		
+		document.getElementById("post-icon-" + (num - 1)).classList.add('post-icon-effect');
+		
 	}
