@@ -82,8 +82,8 @@
 			<br>
 			<br>
 			<div class="list-name-char">投稿者:${_list.th_name}</div>
-			<!--<br>
-			<span class="list-etc-char"><br><br></span>-->
+			<br>
+			<span class="list-etc-char">閲覧数:${_list.th_view}</span>
 			<br>
 			<span class="list-time-char">${_list.th_date}</span>
 		</a>
