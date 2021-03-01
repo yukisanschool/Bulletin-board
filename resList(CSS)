@@ -146,8 +146,8 @@
 			(_list.count %9==5 ? "</div>" : "<a hidden>非表示用</a>")}
 			<!--${_listcount % 9 != 5 or count % 9 != 5 ? "</div>" : "<div></div>"}-->
 	</c:forEach>
-	<div class="bottom-margin"></div>
 </div>
+<div class="bottom-margin"></div>
 </form>
 </body>
 </html>
