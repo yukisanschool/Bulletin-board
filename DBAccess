@@ -26,7 +26,7 @@ public class DBAccess{
 			System.out.println("接続完了");
 			
 			//insert文
-			String sql="INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, '"+title+"',' "+name+"', "+icon+", DEFAULT, '"+description+"', DEFAULT, DEFAULT)";
+			String sql="INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL,'"+title+"','"+name+"',"+icon+",DEFAULT,'"+description+"',DEFAULT,DEFAULT)";
 			//Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
 			//select文を実行し
