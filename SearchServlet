@@ -1,0 +1,53 @@
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.util.ArrayList;
+
+
+import tera.ThreadData;
+import tera.DBAccess;
+
+public class SearchServlet extends HttpServlet {
+	private ArrayList<ThreadData> sd = new ArrayList<ThreadData>();
+	private String mes;	//検索された言葉を格納する
+	
+	public void doGet(HttpServletRequest req, HttpServletResponse res)
+		throws IOException, ServletException{
+			
+			res.setContentType("text/html; charset=Windows-31J");
+			
+			DBAccess db=new DBAccess();
+			sd=db.searchTh(mes,sd);
+
+			//HttpServletRequestの実装クラスのインスタンスに
+			//thlistという名前でデータを登録する
+			req.setAttribute("thlist",sd);
+			
+			//RequestDispatcherインターフェイスを実装するクラスの
+			//インスタンスを取得する
+			//引数は転送先のURL
+			RequestDispatcher dispatcher=
+				req.getRequestDispatcher("searchList");
+			
+			//転送先に要求を転送する
+			dispatcher.forward(req,res);
+		}
+			
+	protected void doPost(HttpServletRequest req, HttpServletResponse res)
+		throws IOException, ServletException{
+
+			res.setContentType("text/html; charset=Shift_JIS");
+			req.setCharacterEncoding("Shift-JIS");
+			PrintWriter out = res.getWriter();
+			
+			//POST要求によって送信されたパラメータを取得する
+			mes = req.getParameter("search");
+			
+			//HttpServletRequestの実装クラスのインスタンスに
+			//th_dataという名前でデータを登録する
+			req.setAttribute("messege",mes);
+			
+			//Getを表示する
+			doGet(req,res);
+	}
+}
