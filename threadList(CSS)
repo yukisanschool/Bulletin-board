@@ -104,7 +104,13 @@
 	<div class="menu-cloud-outer">
 	<img src="image/kumo.svg">
 </div>
-
+<form class="menu-input-wrapper" action="searchservlet" method="POST">
+	<span class="menu-input-margin-left"></span>
+	検索：
+	<textarea name="search" placeholder="ここに入力" requid></textarea>
+	<span class="menu-input-margin-center"></span>
+	<input class="submit-button" type="submit" value="検索">
+</form>
 	<c:forEach var="_list" items="${thlist}">
 			${_list.count==1 ? "<div class=\"list-circle-wrapper list-top-margin\">" : 
 			(_list.count %7==1 ? "<div class=\"list-circle-wrapper\">" : 
