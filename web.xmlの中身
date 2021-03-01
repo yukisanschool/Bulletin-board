@@ -30,3 +30,19 @@
 		<servlet-name>resList</servlet-name>
 		<url-pattern>/resList</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>searchservlet</servlet-name>
+		<servlet-class>SearchServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>searchservlet</servlet-name>
+		<url-pattern>/searchservlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>searchList</servlet-name>
+		<jsp-file>/searchList.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>searchList</servlet-name>
+		<url-pattern>/searchList</url-pattern>
+	</servlet-mapping>
