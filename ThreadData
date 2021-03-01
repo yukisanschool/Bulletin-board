@@ -13,6 +13,7 @@ public class ThreadData implements Serializable{
 	private int th_view;
 	private int th_good;
 	private String th_date;
+	private int count;
 	
 	public ThreadData(){}
 	
@@ -63,5 +64,11 @@ public class ThreadData implements Serializable{
 	}
 	public void setTh_date(String tda){
 		th_date=tda;
+	}
+	public int getCount(){
+		return count;
+	}
+	public void setCount(int cn){
+		count=cn;
 	}
 }
