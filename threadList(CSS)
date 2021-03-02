@@ -111,6 +111,8 @@
 	<span class="menu-input-margin-center"></span>
 	<input class="submit-button" type="submit" value="検索">
 </form>
+	<%! int cnt=0; %>
+	<% pageContext.setAttribute("cnt1",cnt); %>
 	<c:forEach var="_list" items="${thlist}">
 			${_list.count==1 ? "<div class=\"list-circle-wrapper list-top-margin\">" : 
 			(_list.count %7==1 ? "<div class=\"list-circle-wrapper\">" : 
@@ -129,8 +131,13 @@
 		</a>
 			${_list.count %7==0 ? "</div>" : 
 			(_list.count %7==3 ? "</div>" : "<a hidden>非表示用</a>")}
+			<a hidden>${cnt1=_list.count}</a>		<!--ずれないためのダミー用-->
 	</c:forEach>
-	</div><!--きりがいい数字とは限らないので入れてある-->
+	${cnt1%7==1 ? "<a class=\"list-circle-outer dummy\"></a><a class=\"list-circle-outer dummy\"></a></div>" : 
+	(cnt1%7==2 ? "<a class=\"list-circle-outer dummy\"></a></div>" : 
+	(cnt1%7==4 ? "<a class=\"list-circle-outer dummy\"></a><a class=\"list-circle-outer dummy\"></a><a class=\"list-circle-outer dummy\"></a></div>" :
+	(cnt1%7==5 ? "<a class=\"list-circle-outer dummy\"></a><a class=\"list-circle-outer dummy\"></a></div>" :
+	(cnt1%7==6 ? "<a class=\"list-circle-outer dummy\"></a></div>" : "<a hidden>非表示用</a>"))))}
 <div class="bottom-margin"></div>
 </span>
 </body>
