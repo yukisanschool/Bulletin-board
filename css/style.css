@@ -52,6 +52,7 @@ textarea{
 	line-height: 1;
 	resize: none;
 	color: #FDEADD;
+	margin-bottom: -0.5vw;
 }
 textarea:focus {
     border-color: #FDEADD;   /* 枠線の色 */
