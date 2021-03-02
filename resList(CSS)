@@ -21,7 +21,7 @@
 	<body>
 	
 	<div id="post-effect-circle"style="width: 0px; height: 0px; top: 1.05vw; right: 1.6vw;"></div>
-<form method="POST" action="ResponceServlet?id=${tid}" id="post-wrapper" class="display-none">
+<form method="POST" action="ResponceServlet?id=${tid}&co=0" id="post-wrapper" class="display-none">
 	<div id="post-close-button" class="post-button" onclick="threadMenuClicked()">
 		<div class="post-close-char">閉じる</div>
 	</div>
@@ -106,7 +106,7 @@
 	</a>
 </svg>
 
-<form method="GET" action="ResponceServlet?id=${tid}">
+<form method="GET" action="ResponceServlet?id=${tid}&co=0">
 <span class="article-icon-wrapper">
 	<c:forEach var="_rlist" items="${rlist}">
 		<img class="article-icon-img" style="width: 15vw"  src="image/icon${_rlist.th_icon}.svg">
