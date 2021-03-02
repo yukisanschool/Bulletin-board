@@ -526,3 +526,10 @@ textarea:focus {
 	color: #D43333;
 	word-break: break-all;
 }
+/*ダミー用*/
+.dummy{
+	background: transparent;
+}
+.dummy1{
+	background: transparent;
+}
