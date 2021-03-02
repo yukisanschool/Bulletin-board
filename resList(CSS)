@@ -67,7 +67,7 @@
 </div>
 <span id="content">
 <div class="article-background-hide"></div>
-<svg class="menu-sun-outer" width="494.44" height="191.51" version="1.1" viewBox="0 0 130.82 50.671" xmlns="http://www.w3.org/2000/svg">
+<svg class="menu-sun-outer" version="1.1" viewBox="0 0 130.82 50.671" xmlns="http://www.w3.org/2000/svg">
 	<a xlink:href="threadservlet">
 		<ellipse cx="57.166" cy="-21.318" rx="56.942" ry="57.382" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
 	</a>
