@@ -165,7 +165,7 @@
 	(cnt1%9==7 ? "<span class=\"comment-circle-outer dummy1\"></span><span class=\"comment-circle-outer dummy1\"></span></div>" : 
 	(cnt1%9==8 ? "<span class=\"comment-circle-outer dummy1\"></span></div>" : "<a hidden>非表示用</a>"))))))}
 </div>
-</form>
 <div class="bottom-margin"></div>
+</form>
 </body>
 </html>
