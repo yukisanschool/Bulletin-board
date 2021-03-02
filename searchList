@@ -126,8 +126,7 @@
 	<div class=\"list-circle-wrapper\">
 		<h1 class="searchmes">検索文字:${messege}<h1>
 	</div>
-	<h1 class="searchmes">${nodata.data}</h1>
-	<br><br><br><br><br><br><br><br><br><br><br>
+	<div class="bottom-margin">
 		<%! int cnt=0; %>
 		<% pageContext.setAttribute("cnt1",cnt); %>
 		<c:forEach var="_list" items="${thlist}">
@@ -155,6 +154,7 @@
 		(cnt1%7==4 ? "<a class=\"list-circle-outer dummy\"></a><a class=\"list-circle-outer dummy\"></a><a class=\"list-circle-outer dummy\"></a></div>" :
 		(cnt1%7==5 ? "<a class=\"list-circle-outer dummy\"></a><a class=\"list-circle-outer dummy\"></a></div>" :
 		(cnt1%7==6 ? "<a class=\"list-circle-outer dummy\"></a></div>" : "<a hidden>非表示用</a>"))))}
+	<h1 class="searchmes">${nodata}</h1>
 <div class="bottom-margin"></div>
 </span>
 </body>
