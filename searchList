@@ -126,11 +126,11 @@
 	<div class=\"list-circle-wrapper\">
 		<h1 class="searchmes">検索文字:${messege}<h1>
 	</div>
+	<h1 class="searchmes">${nodata.data}</h1>
 	<br><br><br><br><br><br><br><br><br><br><br>
 		<%! int cnt=0; %>
 		<% pageContext.setAttribute("cnt1",cnt); %>
 		<c:forEach var="_list" items="${thlist}">
-				${_list.count==0 ? "<h1 class searchmes>データがありませんでした</h1>" : "<div></div>"}
 				${_list.count==1 ? "<div class=\"list-circle-wrapper\">" : 
 				(_list.count %7==1 ? "<div class=\"list-circle-wrapper\">" : 
 				(_list.count %7==4 ? "<div class=\"list-circle-wrapper\">" : "<div></div>"))}
