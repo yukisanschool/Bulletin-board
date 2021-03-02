@@ -54,14 +54,8 @@ public class ResponceServlet extends HttpServlet {
 		
 		tid=req.getParameter("id");
 		
-		String _co=req.getParameter("co");
-		Integer co = Integer.parseInt(_co);
-		
-		if(co==1){
-			da.updateTh(tid);
-		}
+		da.updateTh(tid);
 
-		
 		Integer ttid = Integer.parseInt(tid);
 		rlist=da.selectThid(ttid,rlist);
 		list=da.selectRes(tid,list);
