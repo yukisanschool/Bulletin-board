@@ -1,0 +1,63 @@
+/*CSS追加
+----------------------------------------------------------*/
+/*												下のボタンの文字*/
+.bottom-menu-char{
+	font-size: 1vw;
+	line-height: 1;
+}
+/*												下のボタンを覆う*/
+.bottom-menu-wrapper{
+	line-height: 0;
+	display: flex;
+	position: fixed;
+	flex-direction : column-reverse;
+	align-items: end;
+	bottom: 0.05vw;
+	right: 1.6vw;
+	width: 6vw;
+	height: 13vw;
+	color: #D43333;
+	z-index: 2;
+}
+/*												下のボタンの丸*/
+.bottom-menu-outer{
+	width: 5vw;
+	height: 5vw;
+	background: #FDEADD;
+	border-radius: 50%;
+	margin-bottom: 1vw;
+	border: 0.15vw solid #D43333;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+<!-- HTML追加 -->
+<!-- </form>の下、<div class="list-circle-wrapper list-top-margin">の上 -->
+
+<div class="bottom-menu-wrapper">
+	<div class="bottom-menu-outer">
+		<div class="bottom-menu-char">トップへ</div>
+		<div class="bottom-menu-char">戻る</div>
+	</div>
+	<div class="bottom-menu-outer" onclick="threadMenuClicked()">
+		<div class="bottom-menu-char">コメント</div>
+		<div class="bottom-menu-char">する</div>
+	</div>
+</div>
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+<!-- HTML変更 -->
+<!-- <svg>最終段 テキスト差し替え -->
+<text x="23.431368" y="20.962624" style="fill:#fdeadd;font-size:9.525px;line-height:1.25;stroke-width:.26458" xml:space="preserve"><tspan x="23.431368" y="14.962624" style="fill:#fdeadd;font-size:9.525px;stroke-width:.26458">ばるみん掲示板</tspan><tspan x="23.431368" y="32.868874" style="fill:#fdeadd;font-size:9.525px;stroke-width:.26458"/></text>
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* CSS変更 */
+/*テキストボックス 通常背景#ECC3BA・文字色#D43333統一・focus時背景は変更なし*/
