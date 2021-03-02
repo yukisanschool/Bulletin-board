@@ -36,7 +36,7 @@
 			<img id="post-icon-0" class="post-icon-img post-icon-effect" src="image/icon1.svg" onclick="selectIcon(1)">
 		</div>
 		<div class="post-icon-outer">
-			<img id="post-icon-1" class="post-icon-img" src="image/icon2.svg" onclick="selectIcon(2)">
+			<img id="post-icon-1"class="post-icon-img" src="image/icon2.svg" onclick="selectIcon(2)">
 		</div>
 		<div class="post-icon-outer">
 			<img id="post-icon-2" class="post-icon-img" src="image/icon3.svg" onclick="selectIcon(3)">
@@ -98,12 +98,13 @@
 			<circle cx="-8.0849" cy="10.891" r="11.958" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
 		</a>
 		<a xlink:href="#top">
-			<text x="24.134235" y="20.813143" style="fill:#d43333;font-size:10.583px;line-height:1.25;stroke-width:.26458" xml:space="preserve"><tspan x="24.134235" y="15.813143" style="fill:#d43333;font-size:10.583px;stroke-width:.26458">トップに戻る</tspan></text>
+			<text x="23.431368" y="20.962624" style="fill:#fdeadd;font-size:9.525px;line-height:1.25;stroke-width:.26458" xml:space="preserve"><tspan x="23.431368" y="14.962624" style="fill:#fdeadd;font-size:9.525px;stroke-width:.26458">ばるみん掲示板</tspan><tspan x="23.431368" y="32.868874" style="fill:#fdeadd;font-size:9.525px;stroke-width:.26458"/></text>
 		</a>
 	</svg>
 	<div class="menu-cloud-outer">
 	<img src="image/kumo.svg">
 </div>
+<!--検索test-->
 <form class="menu-input-wrapper" action="searchservlet" method="POST">
 	<span class="menu-input-margin-left"></span>
 	検索：
@@ -111,6 +112,17 @@
 	<span class="menu-input-margin-center"></span>
 	<input class="submit-button" type="submit" value="検索">
 </form>
+<!--ここまで-->
+<div class="bottom-menu-wrapper">
+		<a href="#top" class="bottom-menu-outer">
+			<div class="bottom-menu-char">トップへ</div>
+			<div class="bottom-menu-char">戻る</div>
+		</a>
+	<div class="bottom-menu-outer" onclick="threadMenuClicked()">
+		<div class="bottom-menu-char">投稿</div>
+		<div class="bottom-menu-char">する</div>
+	</div>
+</div>
 	<%! int cnt=0; %>
 	<% pageContext.setAttribute("cnt1",cnt); %>
 	<c:forEach var="_list" items="${thlist}">
@@ -142,3 +154,4 @@
 </span>
 </body>
 </html>
+
