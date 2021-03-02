@@ -19,10 +19,14 @@ public class SearchServlet extends HttpServlet {
 			DBAccess db=new DBAccess();
 			sd=db.searchTh(mes,sd);
 
-			//HttpServletRequestの実装クラスのインスタンスに
-			//thlistという名前でデータを登録する
-			req.setAttribute("thlist",sd);
-			
+			if(sd==null || sd.size()==0){
+				String data="該当結果がありませんでした。";
+				req.setAttribute("nodata",data);
+			}else{
+				//HttpServletRequestの実装クラスのインスタンスに
+				//thlistという名前でデータを登録する
+				req.setAttribute("thlist",sd);
+			}
 			//RequestDispatcherインターフェイスを実装するクラスの
 			//インスタンスを取得する
 			//引数は転送先のURL
