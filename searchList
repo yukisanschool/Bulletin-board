@@ -63,45 +63,47 @@
 	</span>
 </form>
 <span id="content">
-<svg class="menu-sun-outer" width="494.44" height="191.51" version="1.1" viewBox="0 0 130.82 50.671" xmlns="http://www.w3.org/2000/svg">
-	<a xlink:href="threadservlet">
-		<ellipse cx="57.166" cy="-21.318" rx="56.942" ry="57.382" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+	<svg class="menu-sun-outer" width="494.44" height="191.51" version="1.1" viewBox="0 0 130.82 50.671" xmlns="http://www.w3.org/2000/svg">
+		<a xlink:href="threadservlet">
+			<ellipse cx="57.166" cy="-21.318" rx="56.942" ry="57.382" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+		</a>
+		<a xlink:href="threadservlet">
+			<circle cx="75.289" cy="44.838" r=".70247" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+		</a>
+		<a xlink:href="threadservlet">
+			<ellipse cx="63.253" cy="47.349" rx="1.6391" ry="1.6391" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+		</a>
+		<a xlink:href="threadservlet">
+			<circle cx="86.516" cy="39.672" r="1.6391" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+		</a>
+		<a xlink:href="threadservlet">
+			<circle cx="47.142" cy="46.81" r="3.1991" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+		</a>
+		<a xlink:href="threadservlet">
+			<circle cx="98.981" cy="31.755" r="3.1991" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+		</a>
+		<a xlink:href="threadservlet">
+			<ellipse cx="28.753" cy="42.152" rx="5.6106" ry="5.6106" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+		</a>
+		<a xlink:href="threadservlet">
+			<circle cx="112.61" cy="19.137" r="5.6106" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+		</a>
+		<a xlink:href="threadservlet">
+			<circle cx="121.88" cy="2.3456" r="8.283" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+		</a>
+		<a xlink:href="threadservlet">
+			<circle cx="10.49" cy="31.044" r="8.283" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+		</a>
+		<a xlink:href="threadservlet">
+			<circle cx="-8.0849" cy="10.891" r="11.958" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
+		</a>
+		<a xlink:href="threadservlet">
+			<text x="23.431368" y="20.962624" style="fill:#fdeadd;font-size:9.525px;line-height:1.25;stroke-width:.26458" xml:space="preserve"><tspan x="23.431368" y="14.962624" style="fill:#fdeadd;font-size:9.525px;stroke-width:.26458">ばるみん掲示板</tspan><tspan x="23.431368" y="32.868874" style="fill:#fdeadd;font-size:9.525px;stroke-width:.26458"/></text>
+		</a>
+	</svg>
+<div class="menu-cloud-outer">
 	<img src="image/kumo.svg">
-	</a>
-	<a xlink:href="threadservlet">
-		<circle cx="75.289" cy="44.838" r=".70247" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
-	</a>
-	<a xlink:href="threadservlet">
-		<ellipse cx="63.253" cy="47.349" rx="1.6391" ry="1.6391" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
-	</a>
-	<a xlink:href="threadservlet">
-		<circle cx="86.516" cy="39.672" r="1.6391" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
-	</a>
-	<a xlink:href="threadservlet">
-		<circle cx="47.142" cy="46.81" r="3.1991" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
-	</a>
-	<a xlink:href="threadservlet">
-		<circle cx="98.981" cy="31.755" r="3.1991" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
-	</a>
-	<a xlink:href="threadservlet">
-		<ellipse cx="28.753" cy="42.152" rx="5.6106" ry="5.6106" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
-	</a>
-	<a xlink:href="threadservlet">
-		<circle cx="112.61" cy="19.137" r="5.6106" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
-	</a>
-	<a xlink:href="threadservlet">
-		<circle cx="121.88" cy="2.3456" r="8.283" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
-	</a>
-	<a xlink:href="threadservlet">
-		<circle cx="10.49" cy="31.044" r="8.283" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
-	</a>
-	<a xlink:href="threadservlet">
-		<circle cx="-8.0849" cy="10.891" r="11.958" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
-	</a>
-	<a xlink:href="threadservlet">
-		<text x="24.134235" y="20.813143" style="fill:#d43333;font-size:10.583px;line-height:1.25;stroke-width:.26458" xml:space="preserve"><tspan x="30.134235" y="15.813143" style="fill:#d43333;font-size:10.583px;stroke-width:.26458">一覧に戻る</tspan></text>
-	</a>
-</svg>
+</div>
 <!--検索test-->
 <form class="menu-input-wrapper" action="searchservlet" method="POST">
 	<span class="menu-input-margin-left"></span>
@@ -111,37 +113,48 @@
 	<input class="submit-button" type="submit" value="検索">
 </form>
 <!--ここまで-->
+<div class="bottom-menu-wrapper">
+	<a href="#" class="bottom-menu-outer">
+		<div class="bottom-menu-char">トップへ</div>
+		<div class="bottom-menu-char">戻る</div>
+	</a>
+	<div class="bottom-menu-outer" onclick="threadMenuClicked()">
+		<div class="bottom-menu-char">コメント</div>
+		<div class="bottom-menu-char">する</div>
+	</div>
+</div>
 	<div class=\"list-circle-wrapper\">
 		<h1 class="searchmes">検索文字:${messege}<h1>
 	</div>
-	<br><br><br><br><br>
-	<%! int cnt=0; %>
-	<% pageContext.setAttribute("cnt1",cnt); %>
-	<c:forEach var="_list" items="${thlist}">
-			${_list.count==1 ? "<div class=\"list-circle-wrapper\">" : 
-			(_list.count %7==1 ? "<div class=\"list-circle-wrapper\">" : 
-			(_list.count %7==4 ? "<div class=\"list-circle-wrapper\">" : "<div></div>"))}
-		<a href="ResponceServlet?id=${_list.th_id}&co=1" class="list-circle-outer">
-			<img class="list-icon-img" src="image/icon${_list.th_icon}.svg">
-			<br>
-			<span class="list-title-char">${_list.th_title}</span>
-			<br>
-			<br>
-			<div class="list-name-char">投稿者:${_list.th_name}</div>
-			<br>
-			<span class="list-etc-char">閲覧数:${_list.th_view}</span>
-			<br>
-			<span class="list-time-char">${_list.th_date}</span>
-		</a>
-			${_list.count %7==0 ? "</div>" : 
-			(_list.count %7==3 ? "</div>" : "<a hidden>非表示用</a>")}
-			<a hidden>${cnt1=_list.count}</a>		<!--ずれないためのダミー用-->
-	</c:forEach>
-	${cnt1%7==1 ? "<a class=\"list-circle-outer dummy\"></a><a class=\"list-circle-outer dummy\"></a></div>" : 
-	(cnt1%7==2 ? "<a class=\"list-circle-outer dummy\"></a></div>" : 
-	(cnt1%7==4 ? "<a class=\"list-circle-outer dummy\"></a><a class=\"list-circle-outer dummy\"></a><a class=\"list-circle-outer dummy\"></a></div>" :
-	(cnt1%7==5 ? "<a class=\"list-circle-outer dummy\"></a><a class=\"list-circle-outer dummy\"></a></div>" :
-	(cnt1%7==6 ? "<a class=\"list-circle-outer dummy\"></a></div>" : "<a hidden>非表示用</a>"))))}
+	<br><br><br><br><br><br><br><br><br><br><br>
+		<%! int cnt=0; %>
+		<% pageContext.setAttribute("cnt1",cnt); %>
+		<c:forEach var="_list" items="${thlist}">
+				${_list.count==0 ? "<h1 class searchmes>データがありませんでした</h1>" : "<div></div>"}
+				${_list.count==1 ? "<div class=\"list-circle-wrapper\">" : 
+				(_list.count %7==1 ? "<div class=\"list-circle-wrapper\">" : 
+				(_list.count %7==4 ? "<div class=\"list-circle-wrapper\">" : "<div></div>"))}
+			<a href="ResponceServlet?id=${_list.th_id}&co=1" class="list-circle-outer">
+				<img class="list-icon-img" src="image/icon${_list.th_icon}.svg">
+				<br>
+				<span class="list-title-char">${_list.th_title}</span>
+				<br>
+				<br>
+				<div class="list-name-char">投稿者:${_list.th_name}</div>
+				<br>
+				<span class="list-etc-char">閲覧数:${_list.th_view}</span>
+				<br>
+				<span class="list-time-char">${_list.th_date}</span>
+			</a>
+				${_list.count %7==0 ? "</div>" : 
+				(_list.count %7==3 ? "</div>" : "<a hidden>非表示用</a>")}
+				<a hidden>${cnt1=_list.count}</a>		<!--ずれないためのダミー用-->
+		</c:forEach>
+		${cnt1%7==1 ? "<a class=\"list-circle-outer dummy\"></a><a class=\"list-circle-outer dummy\"></a></div>" : 
+		(cnt1%7==2 ? "<a class=\"list-circle-outer dummy\"></a></div>" : 
+		(cnt1%7==4 ? "<a class=\"list-circle-outer dummy\"></a><a class=\"list-circle-outer dummy\"></a><a class=\"list-circle-outer dummy\"></a></div>" :
+		(cnt1%7==5 ? "<a class=\"list-circle-outer dummy\"></a><a class=\"list-circle-outer dummy\"></a></div>" :
+		(cnt1%7==6 ? "<a class=\"list-circle-outer dummy\"></a></div>" : "<a hidden>非表示用</a>"))))}
 <div class="bottom-margin"></div>
 </span>
 </body>
