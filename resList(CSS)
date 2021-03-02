@@ -131,6 +131,8 @@
 	<br>
 	<br>
 	<p class="article-big-char">コメント</p>
+	<%! int cnt=0; %>
+	<% pageContext.setAttribute("cnt1",cnt); %>
 	<c:forEach var="_list" items="${list}">
 		${_list.count %9 == 1 ? "<div class=\"comment-circle-wrapper\">" : 
 		(_list.count %9 == 6 ? "<div class=\"comment-circle-wrapper\">" : "<div></div>")}
@@ -144,8 +146,15 @@
 			</span>
 		${_list.count %9==0 ? "</div>" : 
 			(_list.count %9==5 ? "</div>" : "<a hidden>非表示用</a>")}
-			<!--${_listcount % 9 != 5 or count % 9 != 5 ? "</div>" : "<div></div>"}-->
+		<a hidden>${cnt1=_list.count}</a>		<!--ずれないためのダミー用-->
 	</c:forEach>
+	${cnt1%9==1 ? "<span class=\"comment-circle-outer dummy1\"></span><span class=\"comment-circle-outer dummy1\"><span class=\"comment-circle-outer dummy1\"><span class=\"comment-circle-outer dummy1\"></div>" : 
+	(cnt1%9==2 ? "<span class=\"comment-circle-outer dummy1\"><span class=\"comment-circle-outer dummy1\"><span class=\"comment-circle-outer dummy1\"></div>" : 
+	(cnt1%9==3 ? "<span class=\"comment-circle-outer dummy1\"></span><span class=\"comment-circle-outer dummy1\"></span></div>" : 
+	(cnt1%9==4 ? "<span class=\"comment-circle-outer dummy1\"></span></div>" : 
+	(cnt1%9==6 ? "<span class=\"comment-circle-outer dummy1\"></span><span class=\"comment-circle-outer dummy1\"></span><span class=\"comment-circle-outer dummy1\"></span></div>" : 
+	(cnt1%9==7 ? "<span class=\"comment-circle-outer dummy1\"></span><span class=\"comment-circle-outer dummy1\"></span></div>" : 
+	(cnt1%9==8 ? "<span class=\"comment-circle-outer dummy1\"></span></div>" : "<a hidden>非表示用</a>"))))))}
 </div>
 <div class="bottom-margin"></div>
 </form>
