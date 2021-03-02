@@ -43,7 +43,7 @@
 		名前<br>
 		<textarea class="post-input-textarea-A post-input-textarea" name="user_name" placeholder="10文字まで" maxlength="10" required></textarea>
 		<br>本文<br>
-		<textarea class="post-input-textarea-B post-input-textarea" name="contents" placeholder="250文字まで" maxlength="250" required></textarea>
+		<textarea class="post-input-textarea-B post-input-textarea" name="contents" placeholder="40Bまで" maxlength="40" required></textarea>
 		<br>
 		<input class="submit-button post-submit-button" type="submit" name="btn1" value="投稿">
 	</div>
@@ -55,7 +55,16 @@
 	</span>
 </form>
 <div id="post-effect-background" class="display-none"></div>
-
+<div class="bottom-menu-wrapper">
+	<a href="#" class="bottom-menu-outer">
+		<div class="bottom-menu-char">トップへ</div>
+		<div class="bottom-menu-char">戻る</div>
+	</a>
+	<div class="bottom-menu-outer" onclick="threadMenuClicked()">
+		<div class="bottom-menu-char">コメント</div>
+		<div class="bottom-menu-char">する</div>
+	</div>
+</div>
 <span id="content">
 <div class="article-background-hide"></div>
 <svg class="menu-sun-outer" width="494.44" height="191.51" version="1.1" viewBox="0 0 130.82 50.671" xmlns="http://www.w3.org/2000/svg">
@@ -93,7 +102,7 @@
 		<circle cx="-8.0849" cy="10.891" r="11.958" style="fill:#d43333;paint-order:stroke markers fill;stroke-miterlimit:3;stroke-width:1.3229;stroke:#fdeadd"/>
 	</a>
 	<a xlink:href="threadservlet">
-		<text x="24.134235" y="20.813143" style="fill:#d43333;font-size:10.583px;line-height:1.25;stroke-width:.26458" xml:space="preserve"><tspan x="30.134235" y="15.813143" style="fill:#d43333;font-size:10.583px;stroke-width:.26458">一覧に戻る</tspan></text>
+		<text x="23.431368" y="20.962624" style="fill:#fdeadd;font-size:9.525px;line-height:1.25;stroke-width:.26458" xml:space="preserve"><tspan x="23.431368" y="14.962624" style="fill:#fdeadd;font-size:9.525px;stroke-width:.26458">ばるみん掲示板</tspan><tspan x="23.431368" y="32.868874" style="fill:#fdeadd;font-size:9.525px;stroke-width:.26458"/></text>
 	</a>
 </svg>
 
@@ -156,7 +165,7 @@
 	(cnt1%9==7 ? "<span class=\"comment-circle-outer dummy1\"></span><span class=\"comment-circle-outer dummy1\"></span></div>" : 
 	(cnt1%9==8 ? "<span class=\"comment-circle-outer dummy1\"></span></div>" : "<a hidden>非表示用</a>"))))))}
 </div>
-<div class="bottom-margin"></div>
 </form>
+<div class="bottom-margin"></div>
 </body>
 </html>
