@@ -46,3 +46,8 @@
 		<servlet-name>searchList</servlet-name>
 		<url-pattern>/searchList</url-pattern>
 	</servlet-mapping>
+	
+	<error-page>
+		<exception-type>javax.servlet.ServletException</exception-type>
+		<location>/Error.jsp</location>
+	</error-page>
