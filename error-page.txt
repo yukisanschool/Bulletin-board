@@ -1,0 +1,32 @@
+
+<!-- HTMLのbodyの中身 -->
+<h1 class="error-A">ERROR!<br><a class="error-B" href="#">トップへ戻る</a></h1>
+<div class="error-circle"></div>
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* エラーページ用CSS */
+.error-A{
+	text-align: center;
+	font-size: 5vw;
+	line-height: 0.9;
+	margin: calc(50vh - 3.5vw) 0 0 0;
+}
+.error-B{
+	text-align: center;
+	font-size: 2vw;
+	line-height: 0.8;
+}
+.error-circle{
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+	background: #D43333;
+	border-radius: 50%;
+	width: 30vw;
+	height: 30vw;
+	z-index: -1;
+}
