@@ -3,7 +3,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.ArrayList;
 
-
+import java.sql.SQLException;
 import tera.ThreadData;
 import tera.DBAccess;
 
@@ -46,8 +46,12 @@ public class ThreadServlet extends HttpServlet {
 			String ti = req.getParameter("title");
 			String de = req.getParameter("description");
 			
-			DBAccess db=new DBAccess();
-			db.insertTh(ico, na, ti, de);
+			try{
+				DBAccess db=new DBAccess();
+				db.insertTh(ico, na, ti, de);
+			}catch(SQLException e){
+				throw new ServletException(e.getMessage(),e);
+			}
 			
 			//HttpServletRequestの実装クラスのインスタンスに
 			//th_dataという名前でデータを登録する
