@@ -14,7 +14,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 
 public class DBAccess{
-	public void insertTh(int icon, String name, String title, String description){
+	public void insertTh(int icon, String name, String title, String description) throws SQLException{
 		try{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
@@ -45,11 +45,12 @@ public class DBAccess{
 		}catch(SQLException e){
 			e.printStackTrace();
 			System.out.println("SQL関連の例外みたい。");
+			throw new SQLException(e.getMessage(),e);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 	}
-	public void insertRes(String tid, String res_name, int res_icon, String res_text){
+	public void insertRes(String tid, String res_name, int res_icon, String res_text) throws SQLException{
         try{
         	Class.forName("oracle.jdbc.driver.OracleDriver");
         //Oracleに接続する
@@ -77,6 +78,7 @@ public class DBAccess{
     	catch(SQLException e){
 			e.printStackTrace();
 			System.out.println("SQL関連の例外みたい。");
+			throw new SQLException(e.getMessage(),e);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
