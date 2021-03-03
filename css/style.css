@@ -587,3 +587,29 @@ textarea:focus {
 .dummy1{
 	background: transparent;
 }
+
+/* エラーページ用CSS */
+.error-A{
+	text-align: center;
+	font-size: 5vw;
+	line-height: 1.5;
+	margin: calc(50vh - 5vw) 0 0 0;
+}
+.error-B{
+	text-align: center;
+	font-size: 2vw;
+	line-height: 1;
+}
+.error-circle{
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+	background: #D43333;
+	border-radius: 50%;
+	width: 30vw;
+	height: 30vw;
+	z-index: -1;
+}
