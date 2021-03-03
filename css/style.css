@@ -51,13 +51,13 @@ textarea{
 	font-size: 1vw;          /* 文字サイズ */
 	line-height: 1;
 	resize: none;
-	color: #FDEADD;
+	color: #D43333;
 	margin-bottom: -0.5vw;
 }
 textarea:focus {
     border-color: #FDEADD;   /* 枠線の色 */
     background-color: #FDEADD;  /* 背景色 */
-    color: #B63333;
+    color: #D43333;
     outline: none;           /* ※ブラウザが標準で付加する線を消したいとき */
 }
 
