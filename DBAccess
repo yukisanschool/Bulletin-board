@@ -297,9 +297,9 @@ public class DBAccess{
     }
 	
     public void updateTh(String tid){
-		        try{
+		try{
         	Class.forName("oracle.jdbc.driver.OracleDriver");
-        //Oracleに接続する
+        	//Oracleに接続する
 			Connection cn=
 				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
 
@@ -314,17 +314,20 @@ public class DBAccess{
 			//ResultSetインターフェイスを実装したクラスの
 			//インスタンスが返る
 			ResultSet rs=st.executeQuery(sql);
-			//データを取得する
+			
+			//データ(閲覧数)を取得する
 			rs.next();
 			BigDecimal _co =rs.getBigDecimal(1);
 			int co=_co.intValue();
+		    //閲覧数を1増やす
 			co+=1;
 
             String sql2="UPDATE t10_board_thread SET th_view="+co+" WHERE th_id="+th_id;
-
+			
+		    //Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st2=cn.createStatement();
 
-            //insert文を実行し
+            //update文を実行し
 			//ResultSetインターフェイスを実装したクラスの
 			//インスタンスが返る
 			int in=st2.executeUpdate(sql2);
