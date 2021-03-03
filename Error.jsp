@@ -34,16 +34,16 @@
 	</div>
 	<div class="post-icon-wrapper">
 		<div class="post-icon-outer">
-			<img id="post-icon-0" class="post-icon-img post-icon-effect" src="image/icon1.svg" onclick="selectIcon(1)">
+			<img id="post-icon-0" class="post-icon-img post-icon-effect" src="image/icon1.svg" onclick="selectIcon(0)">
 		</div>
 		<div class="post-icon-outer">
-			<img id="post-icon-1" class="post-icon-img" src="image/icon2.svg" onclick="selectIcon(2)">
+			<img id="post-icon-1" class="post-icon-img" src="image/icon2.svg" onclick="selectIcon(1)">
 		</div>
 		<div class="post-icon-outer">
-			<img id="post-icon-2" class="post-icon-img" src="image/icon3.svg" onclick="selectIcon(3)">
+			<img id="post-icon-2" class="post-icon-img" src="image/icon3.svg" onclick="selectIcon(2)">
 		</div>
 		<div class="post-icon-outer">
-			<img id="post-icon-3" class="post-icon-img" src="image/icon4.svg" onclick="selectIcon(4)">
+			<img id="post-icon-3" class="post-icon-img" src="image/icon4.svg" onclick="selectIcon(3)">
 		</div>
 	</div>
 	<div class="post-input-wrapper">
@@ -119,10 +119,6 @@
 		<div class="bottom-menu-char">トップへ</div>
 		<div class="bottom-menu-char">戻る</div>
 	</a>
-	<div class="bottom-menu-outer" onclick="threadMenuClicked()">
-		<div class="bottom-menu-char">コメント</div>
-		<div class="bottom-menu-char">する</div>
-	</div>
 </div>
 	<div class=\"list-circle-wrapper\">
 		<h1 class="searchmes">投稿できませんでした<h1>
@@ -148,7 +144,7 @@
 			</a>
 				${_list.count %7==0 ? "</div>" : 
 				(_list.count %7==3 ? "</div>" : "<a hidden>非表示用</a>")}
-				<a hidden>${cnt1=_list.count}</a>		<!--ずれないためのダミー用-->
+				<a hidden>${cnt1=_list.count}</a>
 		</c:forEach>
 		${cnt1%7==1 ? "<a class=\"list-circle-outer dummy\"></a><a class=\"list-circle-outer dummy\"></a></div>" : 
 		(cnt1%7==2 ? "<a class=\"list-circle-outer dummy\"></a></div>" : 
