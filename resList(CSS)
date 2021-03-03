@@ -27,16 +27,16 @@
 	</div>
 	<div class="post-icon-wrapper">
 		<div class="post-icon-outer">
-			<img id="post-icon-0" class="post-icon-img post-icon-effect" src="image/icon1.svg" onclick="selectIcon(1)">
+			<img id="post-icon-0" class="post-icon-img post-icon-effect" src="image/icon1.svg" onclick="selectIcon(0)">
 		</div>
 		<div class="post-icon-outer">
-			<img id="post-icon-1" class="post-icon-img" src="image/icon2.svg" onclick="selectIcon(2)">
+			<img id="post-icon-1" class="post-icon-img" src="image/icon2.svg" onclick="selectIcon(1)">
 		</div>
 		<div class="post-icon-outer">
-			<img id="post-icon-2" class="post-icon-img" src="image/icon3.svg" onclick="selectIcon(3)">
+			<img id="post-icon-2" class="post-icon-img" src="image/icon3.svg" onclick="selectIcon(2)">
 		</div>
 		<div class="post-icon-outer">
-			<img id="post-icon-3" class="post-icon-img" src="image/icon4.svg" onclick="selectIcon(4)">
+			<img id="post-icon-3" class="post-icon-img" src="image/icon4.svg" onclick="selectIcon(3)">
 		</div>
 	</div>
 	<div class="post-input-wrapper">
@@ -57,13 +57,9 @@
 <div id="post-effect-background" class="display-none"></div>
 <div class="bottom-menu-wrapper">
 	<a href="#" class="bottom-menu-outer">
-		<div class="bottom-menu-char">トップへ</div>
+		<div class="bottom-menu-char">上へ</div>
 		<div class="bottom-menu-char">戻る</div>
 	</a>
-	<div class="bottom-menu-outer" onclick="threadMenuClicked()">
-		<div class="bottom-menu-char">コメント</div>
-		<div class="bottom-menu-char">する</div>
-	</div>
 </div>
 <span id="content">
 <div class="article-background-hide"></div>
@@ -155,7 +151,7 @@
 			</span>
 		${_list.count %9==0 ? "</div>" : 
 			(_list.count %9==5 ? "</div>" : "<a hidden>非表示用</a>")}
-		<a hidden>${cnt1=_list.count}</a>		<!--ずれないためのダミー用-->
+		<a hidden>${cnt1=_list.count}</a>
 	</c:forEach>
 	${cnt1%9==1 ? "<span class=\"comment-circle-outer dummy1\"></span><span class=\"comment-circle-outer dummy1\"></span><span class=\"comment-circle-outer dummy1\"></span><span class=\"comment-circle-outer dummy1\"></span></div>" : 
 	(cnt1%9==2 ? "<span class=\"comment-circle-outer dummy1\"></span><span class=\"comment-circle-outer dummy1\"></span><span class=\"comment-circle-outer dummy1\"></span></div>" : 
