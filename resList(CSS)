@@ -60,6 +60,10 @@
 		<div class="bottom-menu-char">上へ</div>
 		<div class="bottom-menu-char">戻る</div>
 	</a>
+	<div class="bottom-menu-outer" onclick="threadMenuClicked()">
+		<div class="bottom-menu-char">コメント</div>
+		<div class="bottom-menu-char">する</div>
+	</div>
 </div>
 <span id="content">
 <div class="article-background-hide"></div>
