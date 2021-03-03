@@ -1,5 +1,4 @@
 //javac -cp C:\tomcat8.5\webapps\myapps\WEB-INF\classes DBAccess.java
-//teraというファイルを作って中に入れる
 package tera;
 
 import java.io.IOException;
@@ -26,7 +25,7 @@ public class DBAccess{
 			System.out.println("接続完了");
 			
 			//insert文
-			String sql="INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL,'"+title+"','"+name+"',"+icon+",DEFAULT,'"+description+"',DEFAULT,DEFAULT)";
+			String sql="INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL,'"+title+"','"+name+"',"+icon+",DEFAULT,'"+description+"',DEFAULT)";
 			//Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
 			//select文を実行し
@@ -59,7 +58,7 @@ public class DBAccess{
             
         	int th_id=Integer.parseInt(tid);
         	
-            String sql="INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL,"+th_id+",'"+res_name+"',"+res_icon+",'"+res_text+"',DEFAULT,DEFAULT)";
+            String sql="INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL,"+th_id+",'"+res_name+"',"+res_icon+",'"+res_text+"',DEFAULT)";
             //Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
 
@@ -89,8 +88,8 @@ public class DBAccess{
             //Oracleに接続する
 			Connection cn=
 				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
-			//わざと昇順にしている
-			String sql=" SELECT th_id, th_icon, th_name, th_title, th_description, TO_CHAR(th_date, 'YYYY-MM-DD HH24:MI'), th_good, th_view, ROW_NUMBER() OVER(ORDER BY th_id ASC) count FROM t10_board_thread ORDER BY th_id";
+		
+			String sql=" SELECT th_id, th_icon, th_name, th_title, th_description, TO_CHAR(th_date, 'YYYY-MM-DD HH24:MI'), th_view, ROW_NUMBER() OVER(ORDER BY th_id ASC) count FROM t10_board_thread ORDER BY th_id";
 			
 			//Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
@@ -113,13 +112,10 @@ public class DBAccess{
 				td.setTh_title(rs.getString(4));
 				td.setTh_description(rs.getString(5));
 				td.setTh_date(rs.getString(6));
-				BigDecimal _good =rs.getBigDecimal(7);
-				int good=_good.intValue();
-				td.setTh_good(good);
-				BigDecimal _view =rs.getBigDecimal(8);
+				BigDecimal _view =rs.getBigDecimal(7);
 				int view=_view.intValue();
 				td.setTh_view(view);
-				BigDecimal _count =rs.getBigDecimal(9);
+				BigDecimal _count =rs.getBigDecimal(8);
 				int count=_count.intValue();
 				td.setCount(count);
 				list.add(td);
@@ -139,6 +135,7 @@ public class DBAccess{
 		}
 		return list;
     }
+	
 	public ArrayList<ThreadData> searchTh(String mes, ArrayList<ThreadData> list){
 	try{
         	Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -147,7 +144,7 @@ public class DBAccess{
 			Connection cn=
 				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
 		
-			String sql=" SELECT th_id, th_icon, th_name, th_title, th_description, TO_CHAR(th_date, 'YYYY-MM-DD HH24:MI'), th_good, th_view, ROW_NUMBER() OVER(ORDER BY th_id ASC) count FROM t10_board_thread WHERE th_title LIKE '%"+mes+"%' ORDER BY th_id";
+			String sql=" SELECT th_id, th_icon, th_name, th_title, th_description, TO_CHAR(th_date, 'YYYY-MM-DD HH24:MI'), th_view, ROW_NUMBER() OVER(ORDER BY th_id ASC) count FROM t10_board_thread WHERE th_title LIKE '%"+mes+"%' ORDER BY th_id";
 			
 			//Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
@@ -170,13 +167,10 @@ public class DBAccess{
 				td.setTh_title(rs.getString(4));
 				td.setTh_description(rs.getString(5));
 				td.setTh_date(rs.getString(6));
-				BigDecimal _good =rs.getBigDecimal(7);
-				int good=_good.intValue();
-				td.setTh_good(good);
-				BigDecimal _view =rs.getBigDecimal(8);
+				BigDecimal _view =rs.getBigDecimal(7);
 				int view=_view.intValue();
 				td.setTh_view(view);
-				BigDecimal _count =rs.getBigDecimal(9);
+				BigDecimal _count =rs.getBigDecimal(8);
 				int count=_count.intValue();
 				td.setCount(count);
 				list.add(td);
@@ -205,7 +199,7 @@ public class DBAccess{
 			Connection cn=
 				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
 		
-			String sql=" SELECT th_id, th_icon, th_name, th_title, th_description, TO_CHAR(th_date, 'YYYY-MM-DD HH24:MI'), th_good, th_view FROM t10_board_thread WHERE th_id="+tid;
+			String sql=" SELECT th_id, th_icon, th_name, th_title, th_description, TO_CHAR(th_date, 'YYYY-MM-DD HH24:MI'), th_view FROM t10_board_thread WHERE th_id="+tid;
 			
 			//Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
@@ -228,10 +222,7 @@ public class DBAccess{
 				td.setTh_title(rs.getString(4));
 				td.setTh_description(rs.getString(5));
 				td.setTh_date(rs.getString(6));
-				BigDecimal _good =rs.getBigDecimal(7);
-				int good=_good.intValue();
-				td.setTh_good(good);
-				BigDecimal _view =rs.getBigDecimal(8);
+				BigDecimal _view =rs.getBigDecimal(7);
 				int view=_view.intValue();
 				td.setTh_view(view);
 				list.add(td);
@@ -262,7 +253,7 @@ public class DBAccess{
 			
         	int th_id=Integer.parseInt(tid);
         	
-			String sql=" SELECT res_id, res_name, res_icon, res_text, res_good, TO_CHAR(res_date, 'YYYY-MM-DD HH24:MI'), ROW_NUMBER() OVER(ORDER BY res_id ASC) count FROM t10_board_res WHERE th_id="+th_id+"ORDER BY res_id";
+			String sql=" SELECT res_id, res_name, res_icon, res_text, TO_CHAR(res_date, 'YYYY-MM-DD HH24:MI'), ROW_NUMBER() OVER(ORDER BY res_id ASC) count FROM t10_board_res WHERE th_id="+th_id+"ORDER BY res_id";
 
 			//Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
@@ -283,11 +274,8 @@ public class DBAccess{
 				int icon=_icon.intValue();
 				r.setRes_icon(icon);
 				r.setRes_text(rs.getString(4));
-				BigDecimal _good =rs.getBigDecimal(5);
-				int good=_good.intValue();
-				r.setRes_good(good);
-				r.setRes_date(rs.getString(6));
-				BigDecimal _count =rs.getBigDecimal(7);
+				r.setRes_date(rs.getString(5));
+				BigDecimal _count =rs.getBigDecimal(6);
 				int count=_count.intValue();
 				r.setCount(count);
 				list.add(r);
@@ -307,16 +295,16 @@ public class DBAccess{
 		}
 		return list;
     }
-    
+	
     public void updateTh(String tid){
 		        try{
         	Class.forName("oracle.jdbc.driver.OracleDriver");
         //Oracleに接続する
 			Connection cn=
 				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","info","pro");
-            
+
         	int th_id=Integer.parseInt(tid);
-        	
+
 			String sql=" SELECT th_view FROM t10_board_thread WHERE th_id="+th_id;
 
 			//Statementインターフェイスを実装するクラスをインスタンス化する
@@ -331,7 +319,7 @@ public class DBAccess{
 			BigDecimal _co =rs.getBigDecimal(1);
 			int co=_co.intValue();
 			co+=1;
-			
+
             String sql2="UPDATE t10_board_thread SET th_view="+co+" WHERE th_id="+th_id;
 
 			Statement st2=cn.createStatement();
