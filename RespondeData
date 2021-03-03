@@ -1,4 +1,3 @@
-//teraファイルの中に入れること
 package tera;
 
 import java.io.Serializable;
@@ -10,7 +9,6 @@ public class ResponceData implements Serializable{
 	private String res_name;
 	private int res_icon;
 	private String res_text;
-	private int res_good;
 	private String res_date;
 	private int count;
 	
@@ -46,12 +44,6 @@ public class ResponceData implements Serializable{
 	public void setRes_text(String res_text){
 		this.res_text = res_text;
 	}
-	public int getRes_good(){
-		return res_good;
-	}
-	public void setRes_good(int res_good){
-		this.res_good = res_good;
-	}
 	public String getRes_date(){
 		return res_date;
 	}
@@ -64,6 +56,5 @@ public class ResponceData implements Serializable{
 	public void setCount(int count){
 		this.count = count;
 	}
-
 
 }
