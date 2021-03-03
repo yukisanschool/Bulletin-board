@@ -1,4 +1,3 @@
-//teraファイルの中に入れる
 package tera;
 
 import java.io.Serializable;
@@ -11,7 +10,6 @@ public class ThreadData implements Serializable{
 	private int th_icon;
 	private String th_description;
 	private int th_view;
-	private int th_good;
 	private String th_date;
 	private int count;
 	
@@ -52,12 +50,6 @@ public class ThreadData implements Serializable{
 	}
 	public void setTh_view(int tv){
 		th_view=tv;
-	}
-	public int getTh_good(){
-		return th_good;
-	}
-	public void setTh_good(int tg){
-		th_good=tg;
 	}
 	public String getTh_date(){
 		return th_date;
