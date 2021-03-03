@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 
+import java.sql.SQLException;
 import tera.ThreadData;
 import tera.ResponceData;
 import tera.DBAccess;
@@ -34,8 +35,12 @@ public class ResponceServlet extends HttpServlet {
 		Integer i=Integer.parseInt(ic);
 		
 		tid=req.getParameter("id");
-		DBAccess da=new DBAccess();
-		da.insertRes(tid,un,i,co);
+		try{
+			DBAccess da=new DBAccess();
+			da.insertRes(tid,un,i,co);
+		}catch(SQLException e){
+			throw new ServletException(e.getMessage(),e);
+		}
 		
 		req.setAttribute("tid",tid);
 		
