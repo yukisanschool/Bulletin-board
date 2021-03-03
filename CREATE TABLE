@@ -55,3 +55,52 @@ INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 4, '名無し', 4, '京都�
 INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 5, '名無し', 2, 'できたらおやつあげてたくさん褒めてる', DEFAULT);
 INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 3, '名無し', 1, '寝る前にブルーライト見ると良くないって言うよね', DEFAULT);
 commit;
+
+/*テストデータ追加*/
+INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, 'テスト落ちた', 'たかし', 2, DEFAULT, 'javaのテスト落ちたわ～。昨日遊び行かんどきゃよかった。', DEFAULT);
+INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, '財布落とした', 'さとる', 3, DEFAULT, '帰りにちゃりこいでたらおとしてた。誰か見つけたら教えて！', DEFAULT);
+INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, '都大会出場！！', 'まもる', 1, DEFAULT, '一回戦　VS都立葛西高校5－0 勝利!!!! 二回戦 VS私立昭和第一学園 応援よろしくっす！！', DEFAULT);
+INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, '本日納車しました！', 'こうき', 1, DEFAULT, 'ダッジチャージャーV5 3000万で購入しました！！ よろしく。', DEFAULT);
+INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, '明日スノボー行ける人？', 'たける', 1, DEFAULT, '明日神立スキー場行くんすけどだっれか行かない', DEFAULT);
+INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, '古着巡り', 'かおり', 1, DEFAULT, '今日は高円寺から渋谷行って古着見てきた！ スルクカフェめっちゃよかった！', DEFAULT);
+INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, 'silupのライブ', 'めぐみ', 2, DEFAULT, 'silupのファーストライブ行ってきました。 ちょーたのしかった！', DEFAULT);
+INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, '生きてる人、いますか？', 'ゆかり', 3, DEFAULT, '', DEFAULT);
+INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, 'エリモン500体は何もなし', 'マサーシ', 4, DEFAULT, 'チョコ業績全部終わったら何かあるかもしれないと思ったけど全部終わらせたけど結局何もありませんでした', DEFAULT);
+INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, '火力を上げるために', 'とおま', 1, DEFAULT, '現在武器の潜在が攻撃力６％と３％とハズレの計３で、アディが攻撃力＋１２と＋６とハズレの計３つです。', DEFAULT);
+INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, 'エピック等級武器潜在', 'DDxxten', 3, DEFAULT, '目茶苦茶弱いのでユニ書買うか死ぬほどラッキーキューブ使って最低限ユニークにしてください', DEFAULT);
+INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, '復帰勢です。', 'ヘキサキューブ', 3, DEFAULT, '潜在を強化しようと思ってヘキサキューブに手を出そうか迷ってます。全身エピなんですけど、', DEFAULT);
+INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, '3-5面', 'momom', 3, DEFAULT, 'ボス戦なに持ってけばいいですか', DEFAULT);
+INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, '募集中', 'かえで鯖', 4, DEFAULT, 'グルクエ統合とか、一緒に遊べるフレンド募集です。 昔やってた頃からかなり変わってるのでいろいろ質問と化するかもですが、よろしくです。', DEFAULT);
+INSERT INTO t10_board_thread VALUES(t10_test0.NEXTVAL, 'サイファー7時から', 'gbc', 1, DEFAULT, '今日の7時からコトリホールでサイファーやります', DEFAULT);
+commit;
+
+
+
+/*既に自分で投稿を入れている場合はスレッド番号が違うのでそのままは入れないこと*/
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 6, '名無し', 1, 'やば', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 6, 'y', 2, 'オチタ～。再試いつだっけ', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 7, 'ss', 1, '何色？', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 7, 'さとる', 1, '茶色っす', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 8, 'トッポ', 1, 'おめでとー。', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 8, 'ビビ', 1, '2回戦ガンバ', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 9, 'HIRO', 1, '今度乗せて！！', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 9, 'こうき', 1, 'いよ！今度ね', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 10, 'カーズ', 1, 'いきたい！', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 10, 'たける', 1, '5時湯沢集合で', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 10, 'カーズ', 1, 'り', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 11, 'Aki', 1, 'いーな！', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 11, 'mmg', 1, 'スルク行ってみた', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 12, 'tohji', 1, '1曲目やばかった！！', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 12, 'ホリー', 1, 'loopもっかい聞きたい！', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 13, '名無し', 4, 'どした？', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 13, 'ｒ', 3, 'モー終わった？', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 14, 'ミラ炉炉', 3, 'えぇ…全部終わってからも何も出ないのかぁ…', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 15, '名無し', 1, '死ぬほど回してエピをユニにした場合3000~4000かかります', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 16, 'koori', 1, 'なるほど、でもメルが1.5Gから2G吹っ飛ぶのでそのメルで武器を買った方が良いです', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 17, '名無し', 1, 'エピならヘキサを買う意味は全くないです。  ', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 17, 'ヘキサキューブ', 1, 'ありがと', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 18, 'レゾック', 1, '回復とボーナスアップがあれば', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 18, 'jodde', 1, '火花狼でラッキーキューブを集めて秘薬もって', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 19, 'ロナ', 2, 'と、とも、友達申請していいですっかあ', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 20, 'k-ing', 2, 'matudaといきまーす', DEFAULT);
+commit;
