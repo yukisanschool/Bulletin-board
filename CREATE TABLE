@@ -103,4 +103,10 @@ INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 18, 'レゾック', 1, '回�
 INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 18, 'jodde', 1, '火花狼でラッキーキューブを集めて秘薬もって', DEFAULT);
 INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 19, 'ロナ', 2, 'と、とも、友達申請していいですっかあ', DEFAULT);
 INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 20, 'k-ing', 2, 'matudaといきまーす', DEFAULT);
+
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 1, 'mimi', 1, '水は健康にいいよ', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 1, 'こう', 4, '紅茶飲むとリラックスできるよ', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 1, '名無し', 2, 'お茶はお～いお茶の濃いやつが一番おいしい', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 1, 'まらお', 1, '綾鷹とかお～いお茶のほうじ茶を飲み比べてみたい', DEFAULT);
+INSERT INTO t10_board_res VALUES(t10_test1.NEXTVAL, 1, 'もも', 3, '白ブドウのジュースめっちゃおいしいよ。皆飲んでみてほしい', DEFAULT);
 commit;
