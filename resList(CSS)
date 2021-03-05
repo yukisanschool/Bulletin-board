@@ -43,7 +43,7 @@
 		名前<br>
 		<textarea class="post-input-textarea-A post-input-textarea" name="user_name" placeholder="10文字まで" maxlength="10" required></textarea>
 		<br>本文<br>
-		<textarea class="post-input-textarea-B post-input-textarea" name="contents" placeholder="40Bまで" maxlength="40" required></textarea>
+		<textarea class="post-input-textarea-B post-input-textarea" name="contents" placeholder="40文字まで" maxlength="40" required></textarea>
 		<br>
 		<input class="submit-button post-submit-button" type="submit" name="btn1" value="投稿">
 	</div>
